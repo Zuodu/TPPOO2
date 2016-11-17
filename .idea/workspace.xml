@@ -12,31 +12,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78b7468f-fe0a-49f4-bb73-c0f95504b920" name="Default" comment="création des fichiers">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/TPPOO2.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Catalogue.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Catalogue.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Parcours.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Parcours.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Trajet.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Trajet.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TrajetCompose.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TrajetCompose.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TrajetSimple.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TrajetSimple.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/squelettes/Module.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/squelettes/Module.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/squelettes/SClasse.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/squelettes/SClasse.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/squelettes/SClasseG.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/squelettes/SClasseG.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/readme.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TPPOO2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -137,11 +114,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Module.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Module.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/squelettes/Module.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="612">
               <caret line="36" column="19" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -157,16 +144,6 @@
                 <element signature="e#1748#1802#0" expanded="true" />
                 <element signature="e#1898#1951#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Catalogue.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Catalogue.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="534">
-              <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -196,6 +173,7 @@
         <option value="$PROJECT_DIR$/TrajetCompose.cpp" />
         <option value="$PROJECT_DIR$/Parcours.cpp" />
         <option value="$PROJECT_DIR$/Parcours.h" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -478,12 +456,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1479400123249</updated>
-      <workItem from="1479400124413" duration="3359000" />
+      <workItem from="1479400124413" duration="3494000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3359000" />
+    <option name="totallyTimeSpent" value="3494000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -532,14 +510,6 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readme.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -657,6 +627,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
           <caret line="36" column="19" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
           <folding />
         </state>
       </provider>
