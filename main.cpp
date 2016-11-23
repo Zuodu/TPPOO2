@@ -1,3 +1,4 @@
+using namespace std;
 #include <iostream>
 #include <cstring>
 //#include "TrajetSimple.h"
@@ -19,7 +20,7 @@ void testTrajetSimple()
 	TS1->afficherTrajet();
 }
 
-void testAfficherCatalogue()
+void testTrajetCompose()
 {
     char* nomCatalogue = (char*) "katarina";
     Catalogue *myCatalogue = new Catalogue(nomCatalogue);

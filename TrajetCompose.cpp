@@ -37,8 +37,10 @@ using namespace std;
 //} //----- Fin de Méthode
 void TrajetCompose::afficherTrajet() const {
 	Parcours * current = listeEscales;
+	cout << "TrajetCompose afficher" << endl;
 	while(current!=NULL)
 	{
+		cout << "TrajetCompose afficher while" << endl;
 		current->trajetAssocie->afficherTrajet();
 		current = current->nextParcours;
 	}

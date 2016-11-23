@@ -61,6 +61,99 @@ void Catalogue::AddToCatalogueTC (TrajetCompose *unTrajet)
 
 void Catalogue::MenuCatalogue () const
 {
+	bool sortie =false;
+	bool addTrajetSimple = false;
+	bool addTrajetCompose = false;
+	int choix =0;
+	while(sortie == false)
+	{
+		cout<<"Choisissez une opération:"<<endl;
+		cout<<"1: Afficher le catalogue"<<endl;
+		cout<<"2: Ajouter un trajet simple"<<endl;
+		cout<<"3: Ajouter un trajet compose"<<endl;
+		cout<<"4: Faire une recherche de parcours"<<endl;
+		cout<<"5: Quitter le catalogue"<<endl;
+		cin >> choix;
+		switch (choix)
+		{
+			case 1:
+				//TODO AfficherCatalogue
+			break;
+			case 2:
+				addTrajetSimple = true;
+			    //TODO AddTrajetSimple
+			break;
+			case 3:
+				addTrajetCompose = true;
+				//TODO AddTrajetCompose
+			break;
+			case 4:
+				//TODO Recherche
+			break;
+			case 5:
+				sortie = true;
+			break;
+			default:
+			cout<<"Cette option n'est pas dans le catalogue"<<endl;
+		}
+		if(addTrajetSimple == true)
+		{
+			char unDepart [20];
+			char uneArrivee [20];
+			char unTransport [20];
+			cout << "Donnez la ville de depart" << endl;
+			cin >> unDepart;
+			cout << "Donnez la ville d'arrivee" << endl;
+			cin >> uneArrivee;
+			cout << "Donnez le moyen de transport" << endl;
+			cin >> unTransport;
+			char * depart =new char [strlen(unDepart)]; //ajustement taille chaines de caractères
+			char * arrivee =new char [strlen(uneArrivee)];
+			char * transport =new char [strlen(unTransport)];
+			strcpy(depart,unDepart);
+			strcpy(arrivee,uneArrivee);
+			strcpy(transport,unTransport);
+			TrajetSimple *unTrajet =new TrajetSimple(depart,arrivee,transport);
+			//AddToCatalogueTS(unTrajet);
+			addTrajetSimple = false;
+		}
+		if(addTrajetCompose == true)
+		{
+			char unDepartC [20];
+			char uneArriveeC [20];
+			char uneArrivee [20];
+			char unTransport [20];
+			cout << "Donnez la ville de depart du trajet compose" << endl;
+			cin >> unDepartC;
+			cout << "Donnez la ville d'arrivee du trajet compose" << endl;
+			cin >> uneArriveeC;
+			cout << "Donnez la ville d'arrivee du premier trajet simple" << endl;
+			cin >> uneArrivee;
+			cout << "Donnez le moyen de transport du premier trajet simple" << endl;
+			cin >> unTransport;
+			char * depart =new char [strlen(unDepartC)];   //ajustement taille chaines de caractères
+			char * arrivee =new char [strlen(uneArrivee)];
+			char * arriveeC =new char [strlen(uneArriveeC)];
+			char * transport =new char [strlen(unTransport)];
+			strcpy(depart,unDepartC);
+			strcpy(arrivee,uneArrivee);
+			strcpy(transport,unTransport);
+			TrajetSimple *unTrajet =new TrajetSimple(depart,arrivee,transport);
+			Parcours * premierParcours = new Parcours (unTrajet);
+			TrajetCompose * unTrajetCompose = new TrajetCompose (depart,arriveeC,premierParcours);
+			do
+			{
+				cout << "Donnez la ville de depart du trajet simple" << endl;
+				//cin >> unDepart;
+				cout << "Donnez la ville d'arrivee du trajet simple" << endl;
+				cin >> uneArrivee;
+				cout << "Donnez le moyen de transport du trajet simple" << endl;
+				cin >> unTransport;
+			}while(strcmp(arriveeC,arrivee)!=0);
+
+			addTrajetCompose = false;
+		}
+	}
 }
 
 //------------------------------------------------- Surcharge d'opérateurs
@@ -76,7 +169,7 @@ void Catalogue::MenuCatalogue () const
 } //----- Fin de Catalogue (constructeur de copie)
 */
 
-Catalogue::Catalogue (char* unNom)
+Catalogue::Catalogue (char * unNom)
 // Algorithme :
 //
 {
