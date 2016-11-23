@@ -30,7 +30,12 @@ using namespace std;
 //
 //{
 //} //----- Fin de Méthode
-	void TrajetSimple::afficherTrajet() {}
+void TrajetSimple::afficherTrajet() const
+{
+		cout << "Ville de depart: " << depart << endl;
+		cout << "Ville d'arrivee: " << arrivee << endl;
+		cout << "Moyen de transport: " << transport << endl;
+}
 
 
 //------------------------------------------------- Surcharge d'opérateurs

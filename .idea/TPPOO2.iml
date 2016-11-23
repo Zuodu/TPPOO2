@@ -20,13 +20,11 @@
       <library name="Header Search Paths">
         <CLASSES>
           <root url="file://C:/MinGW/include" />
-          <root url="file://C:/MinGW/mingw32/include" />
           <root url="file://C:/MinGW/lib/gcc/mingw32/5.3.0/include" />
           <root url="file://C:/MinGW/lib/gcc/mingw32/5.3.0/include-fixed" />
         </CLASSES>
         <SOURCES>
           <root url="file://C:/MinGW/include" />
-          <root url="file://C:/MinGW/mingw32/include" />
           <root url="file://C:/MinGW/lib/gcc/mingw32/5.3.0/include" />
           <root url="file://C:/MinGW/lib/gcc/mingw32/5.3.0/include-fixed" />
         </SOURCES>

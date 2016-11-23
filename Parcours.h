@@ -11,6 +11,7 @@
 #define PARCOURS_H
 
 //--------------------------------------------------- Interfaces utilisées
+#include "Trajet.h"
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
@@ -32,7 +33,8 @@ public:
     //
     // Contrat :
     //
-
+    Trajet *trajetAssocie;
+    Parcours *nextParcours;
 //------------------------------------------------- Surcharge d'opérateurs
 
 //-------------------------------------------- Constructeurs - destructeur
@@ -43,7 +45,7 @@ public:
     //
     */
 
-    Parcours ();
+    Parcours (Trajet *unTrajet);
     // Mode d'emploi :
     //
     // Contrat :
@@ -76,5 +78,5 @@ private:
 //----------------------------------------------------------- Types privés
 
 };
-#endif // PARCOURS_H
+#endif  //PARCOURS_H
 

@@ -11,7 +11,9 @@
 #define CATALOGUE_H
 
 //--------------------------------------------------- Interfaces utilisées
-
+#include "TrajetSimple.h"
+#include "TrajetCompose.h"
+#include "Parcours.h"
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
@@ -33,7 +35,10 @@ public:
     //
     // Contrat :
     //
-
+    void AfficherCatalogue () const;
+    void AddToCatalogueTS (TrajetSimple *unTrajet);
+    void AddToCatalogueTC (TrajetCompose *unTrajet);
+    void MenuCatalogue () const;
 
 //------------------------------------------------- Surcharge d'opérateurs
 
@@ -45,7 +50,7 @@ public:
     //
      */
 
-    Catalogue ( );
+    Catalogue (char* unNom);
     // Mode d'emploi :
     //
     // Contrat :
@@ -70,7 +75,8 @@ protected:
 
 private:
 //------------------------------------------------------- Attributs privés
-
+    Parcours * listeTrajets;
+    char * nomCatalogue;
 //---------------------------------------------------------- Classes amies
 
 //-------------------------------------------------------- Classes privées
@@ -78,5 +84,5 @@ private:
 //----------------------------------------------------------- Types privés
 
 };
-#endif // CATALOGUE_H
+#endif //CATALOGUE_H
 

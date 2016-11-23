@@ -33,7 +33,7 @@ public:
     //
     // Contrat :
     //
-	void afficherTrajet();
+	void afficherTrajet() const;
 
 //------------------------------------------------- Surcharge d'opérateurs
 
@@ -78,5 +78,5 @@ private:
 //----------------------------------------------------------- Types privés
 
 };
-#endif // TRAJETSIMPLE_H
+#endif  //TRAJETSIMPLE_H
 

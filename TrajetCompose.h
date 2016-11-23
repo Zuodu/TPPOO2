@@ -78,5 +78,5 @@ private:
 //----------------------------------------------------------- Types privés
 
 };
-#endif // TRAJETCOMPOSE_H
+#endif  //TRAJETCOMPOSE_H
 

@@ -17,6 +17,7 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "TrajetCompose.h"
+#include "TrajetSimple.h"
 #include "Parcours.h"
 //------------------------------------------------------------- Constantes
 
@@ -34,8 +35,13 @@ using namespace std;
 //
 //{
 //} //----- Fin de Méthode
-    void TrajetCompose::afficherTrajet() const {
-
+void TrajetCompose::afficherTrajet() const {
+	Parcours * current = listeEscales;
+	while(current!=NULL)
+	{
+		current->trajetAssocie->afficherTrajet();
+		current = current->nextParcours;
+	}
 }
 
 

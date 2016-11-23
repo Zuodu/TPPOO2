@@ -28,12 +28,40 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-// type Catalogue::Méthode ( liste de paramètres )
+void Catalogue::AfficherCatalogue () const
 // Algorithme :
 //
-//{
-//} //----- Fin de Méthode
+{
+	cout<<"affichage du catalogue "<< nomCatalogue << endl;
+	listeTrajets->trajetAssocie->afficherTrajet();
 
+	
+} //----- Fin de Méthode
+
+void Catalogue::AddToCatalogueTS (TrajetSimple *unTrajet)
+{
+	Parcours* currentParcours = listeTrajets;
+	while(currentParcours->nextParcours != NULL)
+	{
+		currentParcours = currentParcours->nextParcours;
+	}
+	currentParcours->trajetAssocie = unTrajet;
+}
+
+void Catalogue::AddToCatalogueTC (TrajetCompose *unTrajet)
+{
+	//TODO finir la méthode ?
+	Parcours* currentParcours = listeTrajets;
+	while(currentParcours->nextParcours != NULL)
+	{
+		currentParcours = currentParcours->nextParcours;
+	}
+	currentParcours->trajetAssocie = unTrajet;
+}
+
+void Catalogue::MenuCatalogue () const
+{
+}
 
 //------------------------------------------------- Surcharge d'opérateurs
 
@@ -48,10 +76,13 @@ using namespace std;
 } //----- Fin de Catalogue (constructeur de copie)
 */
 
-Catalogue::Catalogue ( )
+Catalogue::Catalogue (char* unNom)
 // Algorithme :
 //
 {
+	TrajetSimple* trajetInit = new TrajetSimple(unNom,unNom,unNom);
+	listeTrajets = new Parcours(trajetInit);
+	nomCatalogue = unNom;
 #ifdef MAP
     cout << "Appel au constructeur de <Catalogue>" << endl;
 #endif
@@ -62,6 +93,10 @@ Catalogue::~Catalogue ( )
 // Algorithme :
 //
 {
+	//TODO  : besoin d'une boucle pour delete chaque pointeur qui suit faire dans le sens 1 vers 2 etc
+	// ex : current, on va sur le premier, on prend le suivant, on delete le premier
+	delete listeTrajets;
+	delete[] nomCatalogue;
 #ifdef MAP
     cout << "Appel au destructeur de <Catalogue>" << endl;
 #endif

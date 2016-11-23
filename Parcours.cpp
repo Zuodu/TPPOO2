@@ -48,10 +48,12 @@ using namespace std;
  */
 
 
-Parcours::Parcours ()
+Parcours::Parcours (Trajet *unTrajet)
 // Algorithme :
 //
 {
+	nextParcours = NULL;
+	trajetAssocie = unTrajet;
 #ifdef MAP
     cout << "Appel au constructeur de <Parcours>" << endl;
 #endif
@@ -62,6 +64,8 @@ Parcours::~Parcours ( )
 // Algorithme :
 //
 {
+	//delete nextParcours;
+	//delete trajetAssocie;
 #ifdef MAP
     cout << "Appel au destructeur de <Parcours>" << endl;
 #endif
