@@ -37,8 +37,10 @@ public:
     //
     void AfficherCatalogue () const;
     void AddToCatalogueTS (TrajetSimple *unTrajet);
+	void AddToCatalogueTSSaisie();
     void AddToCatalogueTC (TrajetCompose *unTrajet);
-    void MenuCatalogue () const;
+	void AddToCatalogueTCSaisie();
+    void MenuCatalogue ();
 
 //------------------------------------------------- Surcharge d'opérateurs
 

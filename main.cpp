@@ -24,10 +24,11 @@ void testTrajetCompose()
 {
     char* nomCatalogue = (char*) "katarina";
     Catalogue *myCatalogue = new Catalogue(nomCatalogue);
+	myCatalogue->MenuCatalogue();
 }
 
 int main() {
-    std::cout << "Phase de test testAfficherCatalogue" << std::endl;
+  /*  std::cout << "Phase de test testAfficherCatalogue" << std::endl;
     char depart[10];
     strcpy(depart,"paris");
     char arrivee[10];
@@ -40,6 +41,8 @@ int main() {
     Catalogue myCatalogue = Catalogue(nomCatalogue);
     myCatalogue.AddToCatalogueTS(TS1);
     myCatalogue.AfficherCatalogue();
-    delete TS1;
+    delete TS1;*/
+	testTrajetCompose();
+
     return 0;
 }
