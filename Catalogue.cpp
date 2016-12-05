@@ -54,7 +54,7 @@ void Catalogue::AfficherCatalogue () const
     cout <<"--------------FIN DU CATALOGUE--------------"<<endl;
 } //----- Fin de Méthode
 
-void Catalogue::AddToCatalogueTS (TrajetSimple *unTrajet)
+void Catalogue::AddToCatalogue (Trajet *unTrajet)
 {
 	Parcours* currentParcours = listeTrajets;
 	while(currentParcours->nextParcours != NULL)
@@ -86,20 +86,8 @@ void Catalogue::AddToCatalogueTSSaisie()
 	strcpy(transport, unTransport);
 
 	TrajetSimple *unTrajet = new TrajetSimple(idTS,depart, arrivee, transport);
-	AddToCatalogueTS(unTrajet);
+	AddToCatalogue(unTrajet);
     idTS++;
-}
-
-void Catalogue::AddToCatalogueTC (TrajetCompose *unTrajet)
-{
-	//TODO finir la méthode ?
-	Parcours* currentParcours = listeTrajets;
-	while(currentParcours->nextParcours != NULL)
-	{
-		currentParcours = currentParcours->nextParcours;
-	}
-	Parcours *nouveauParcours = new Parcours(unTrajet);
-	currentParcours->nextParcours = nouveauParcours ;
 }
 
 void Catalogue::AddToCatalogueTCSaisie()
@@ -130,20 +118,21 @@ void Catalogue::AddToCatalogueTCSaisie()
 	TrajetSimple *unTrajet = new TrajetSimple(0,depart, arrivee, transport);
 	Parcours * premierParcours = new Parcours(unTrajet);
 	TrajetCompose * unTrajetCompose = new TrajetCompose(idTC,depart, arriveeC, premierParcours);
-	AddToCatalogueTC(unTrajetCompose);
+	AddToCatalogue(unTrajetCompose);
 	bool trajetFini = false;
 	while (!trajetFini)
 	{
-		trajetFini=AddToCatalogueTCFin(arriveeC,premierParcours, trajetFini);
+		trajetFini=AddToCatalogueTCFin(arriveeC,premierParcours);
 	}
     idTC++;
 }
 
-bool Catalogue::AddToCatalogueTCFin(char* arriveeC, Parcours* premierParcours, bool trajetFini)
+bool Catalogue::AddToCatalogueTCFin(char* arriveeC, Parcours* premierParcours)
 {
 	char unDepart[LG];
 	char uneArrivee[LG];
 	char unTransport[LG];
+    bool trajetFini = false;
 	cout << "Donnez la ville de depart de votre trajet intermediaire" << endl;
 	cin >> unDepart;
 	cout << "Donnez la ville d'arrivee de votre trajet intermediaire" << endl;
@@ -170,6 +159,14 @@ bool Catalogue::AddToCatalogueTCFin(char* arriveeC, Parcours* premierParcours, b
 		trajetFini = true;
 	}
 	return trajetFini;
+}
+
+int** Catalogue::RechercheGraphe(int **matrixAdj,int ***matrixIdAdj,char **matrixNodeAdj) {
+
+}
+
+void Catalogue::AfficherSolution(int **solutions) {
+
 }
 
 void Catalogue::RechercheSimple() 
@@ -214,6 +211,10 @@ void Catalogue::RechercheAvancee()
     bool existeInMatRow = false;
     bool existeInMatColumn = false;
     int nbMax = idTC-1002+idTS;
+    int** solutions = new int*[nbMax];
+    for(int t=0;t<nbMax;t++){
+        solutions[t] = new int[nbMax];
+    }
     int ** matrixInv = MatriceAdjacenceInversee();
     char** matrixTrjInv = MatriceTrajetsInversee();
     int *** matrixIdInv = MatriceNomTrajetsInversee();
@@ -283,8 +284,9 @@ void Catalogue::RechercheAvancee()
         }
         cout << "|"<<endl;
     }//pause
-    //todo : implémenter l'algo de recherche
 
+    solutions = RechercheGraphe(matrixInv,matrixIdInv,matrixTrjInv);
+    AfficherSolution(solutions);
 }
 
 void Catalogue::MenuCatalogue ()
@@ -409,5 +411,7 @@ int ***Catalogue::MatriceNomTrajetsInversee() {
 
     return matrixAdj;
 }
+
+
 //------------------------------------------------------- Méthodes privées
 

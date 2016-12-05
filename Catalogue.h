@@ -36,11 +36,12 @@ public:
     // Contrat :
     //
     void AfficherCatalogue () const;
-    void AddToCatalogueTS (TrajetSimple *unTrajet);
+    void AddToCatalogue(Trajet *unTrajet);
 	void AddToCatalogueTSSaisie();
-    void AddToCatalogueTC (TrajetCompose *unTrajet);
 	void AddToCatalogueTCSaisie();
-	bool AddToCatalogueTCFin(char* arriveeC, Parcours* premierParcours, bool trajetFini);
+	bool AddToCatalogueTCFin(char* arriveeC, Parcours* premierParcours);
+    int** RechercheGraphe(int** matrixAdj,int*** matrixIdAdj,char** matrixNodeAdj);
+    void AfficherSolution(int ** solutions);
 	void RechercheSimple();
     void RechercheAvancee();
     void MenuCatalogue ();
