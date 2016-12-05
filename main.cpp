@@ -16,7 +16,7 @@ void testTrajetSimple()
 	transport[0] = 'C';
 	transport[1] = 'A';
 	transport[2] = 'R';
-	TrajetSimple* TS1 = new TrajetSimple (depart,arrivee,transport);
+	TrajetSimple* TS1 = new TrajetSimple (0,depart,arrivee,transport);
 	TS1->afficherTrajet();
 }
 

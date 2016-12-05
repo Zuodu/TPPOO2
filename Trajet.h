@@ -34,7 +34,12 @@ public:
     // Contrat :
     //
 	virtual void afficherTrajet() const =0;
-
+    virtual int getID() const =0;
+	bool comparerTrajet(char* depart,char * arrivee) const;
+    bool comparerArrivee(char* uneArrivee) const ;
+    bool comparerDepart(char* unDepart) const ;
+    char* getArrivee() const;
+    char* getDepart() const;
 //------------------------------------------------- Surcharge d'opérateurs
 
 //-------------------------------------------- Constructeurs - destructeur

@@ -40,6 +40,9 @@ public:
 	void AddToCatalogueTSSaisie();
     void AddToCatalogueTC (TrajetCompose *unTrajet);
 	void AddToCatalogueTCSaisie();
+	bool AddToCatalogueTCFin(char* arriveeC, Parcours* premierParcours, bool trajetFini);
+	void RechercheSimple();
+    void RechercheAvancee();
     void MenuCatalogue ();
 
 //------------------------------------------------- Surcharge d'opérateurs
@@ -68,7 +71,9 @@ public:
 
 protected:
 //----------------------------------------------------- Méthodes protégées
-
+    int ** MatriceAdjacenceInversee();
+    char ** MatriceTrajetsInversee();
+    int *** MatriceNomTrajetsInversee();
 private:
 //------------------------------------------------------- Méthodes privées
 
@@ -79,6 +84,8 @@ private:
 //------------------------------------------------------- Attributs privés
     Parcours * listeTrajets;
     char * nomCatalogue;
+    int idTC;
+    int idTS;
 //---------------------------------------------------------- Classes amies
 
 //-------------------------------------------------------- Classes privées

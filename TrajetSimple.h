@@ -34,6 +34,7 @@ public:
     // Contrat :
     //
 	void afficherTrajet() const;
+    int getID() const;
 
 //------------------------------------------------- Surcharge d'opérateurs
 
@@ -44,7 +45,7 @@ public:
     // Contrat :
     //
 
-    TrajetSimple (char* unDepart, char* unArrivee, char* unTransport);
+    TrajetSimple (int unId,char* unDepart, char* unArrivee, char* unTransport);
     // Mode d'emploi :
     //
     // Contrat :
@@ -67,6 +68,7 @@ private:
 protected:
 //----------------------------------------------------- Attributs protégés
     char* transport;
+    int id;
     
 private:
 //------------------------------------------------------- Attributs privés

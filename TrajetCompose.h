@@ -35,6 +35,7 @@ public:
     // Contrat :
     //
 	void afficherTrajet() const;
+    int getID() const;
 
 //------------------------------------------------- Surcharge d'opérateurs
 
@@ -45,7 +46,7 @@ public:
     // Contrat :
     //
 
-    TrajetCompose (char* unDepart, char* unArrivee, Parcours* uneListeEscales );
+    TrajetCompose (int unId,char* unDepart, char* unArrivee, Parcours* uneListeEscales );
     // Mode d'emploi :
     //
     // Contrat :
@@ -68,6 +69,7 @@ private:
 protected:
 //----------------------------------------------------- Attributs protégés
     Parcours* listeEscales;
+    int id;
 private:
 //------------------------------------------------------- Attributs privés
 

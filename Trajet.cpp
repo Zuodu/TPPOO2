@@ -15,6 +15,7 @@
 using namespace std;
 #include "Trajet.h"
 #include <iostream>
+#include <cstring>
 
 //------------------------------------------------------------- Constantes
 
@@ -27,13 +28,33 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-// type Trajet::Méthode ( liste de paramètres )
-// Algorithme :
-//
-//{
-//} //----- Fin de Méthode
-	void Trajet::afficherTrajet () const{}
+void Trajet::afficherTrajet () const{}
 
+bool Trajet::comparerTrajet(char* unDepart, char * uneArrivee) const
+{
+    bool correspond = false;
+    if (strcmp(unDepart, depart) == 0 && strcmp(uneArrivee, arrivee) == 0)
+    {
+        correspond = true;
+    }
+    return correspond;
+}
+
+bool Trajet::comparerArrivee(char *uneArrivee) const{
+    return strcmp(uneArrivee, arrivee) == 0;
+}
+
+bool Trajet::comparerDepart(char *unDepart) const{
+    return strcmp(unDepart, depart) == 0;
+}
+
+char *Trajet::getArrivee() const{
+    return arrivee;
+}
+
+char *Trajet::getDepart() const{
+    return depart;
+}
 
 //------------------------------------------------- Surcharge d'opérateurs
 
@@ -69,7 +90,14 @@ Trajet::~Trajet ( )
 #endif
 	delete []depart;
 	delete []arrivee;
-} //----- Fin de ~Trajet
+}
+
+
+
+
+
+
+//----- Fin de ~Trajet
 
 
 //------------------------------------------------------------------ PRIVE

@@ -13,7 +13,6 @@
 //-------------------------------------------------------- Include système
 using namespace std;
 #include <iostream>
-#include <cstring>
 //------------------------------------------------------ Include personnel
 #include "TrajetSimple.h"
 //------------------------------------------------------------- Constantes
@@ -32,9 +31,15 @@ using namespace std;
 //} //----- Fin de Méthode
 void TrajetSimple::afficherTrajet() const
 {
-		cout << "Ville de depart: " << depart << endl;
-		cout << "Ville d'arrivee: " << arrivee << endl;
-		cout << "Moyen de transport: " << transport << endl;
+        if(id != 0) {
+            cout << "| TS" << id << " = " << "de  " << depart << " a " << arrivee << " en " << transport << endl;
+        }else{
+            cout <<"de  " << depart << " a " << arrivee << " en " << transport;
+        }
+}
+
+int TrajetSimple::getID() const {
+    return id;
 }
 
 
@@ -51,7 +56,7 @@ void TrajetSimple::afficherTrajet() const
 } //----- Fin de TrajetSimple (constructeur de copie)
 */
 
-TrajetSimple::TrajetSimple (char* unDepart, char* unArrivee, char* unTransport)
+TrajetSimple::TrajetSimple (int unId,char* unDepart, char* unArrivee, char* unTransport)
 :Trajet(unDepart, unArrivee)
 // Algorithme :
 //
@@ -60,6 +65,7 @@ TrajetSimple::TrajetSimple (char* unDepart, char* unArrivee, char* unTransport)
     cout << "Appel au constructeur de <TrajetSimple>" << endl;
 #endif
 	transport = unTransport;
+    id = unId;
 } //----- Fin de TrajetSimple
 
 
@@ -71,7 +77,10 @@ TrajetSimple::~TrajetSimple ( )
     cout << "Appel au destructeur de <TrajetSimple>" << endl;
 #endif
 	delete []transport;
-} //----- Fin de ~TrajetSimple
+}
+
+
+//----- Fin de ~TrajetSimple
 
 
 //------------------------------------------------------------------ PRIVE
