@@ -5,7 +5,7 @@
     copyright            : (C) 2016 par Yohan GRACIA et Zifan YAO
 *************************************************************************/
 
-//---------- Interface de la classe <Trajet> (fichier Trajet.h) ----------------
+//---------- Interface de la classe <Trajet> (fichier Trajet.h) ----------
 
 #if ! defined ( TRAJET_H )
 #define TRAJET_H
