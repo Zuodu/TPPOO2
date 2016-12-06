@@ -2,28 +2,21 @@
                            Trajet.cpp  -  description
                              -------------------
     début                : 16/11/2016
-    copyright            : (C) 2016 par Yohan GRACIA et Zifan YAO  
-    e-mail               : 
+    copyright            : (C) 2016 par Yohan GRACIA et Zifan YAO
 *************************************************************************/
-
 //---------- Réalisation de la classe <Trajet> (fichier Trajet.cpp) ------------
 //---------------------------------------------------------------- INCLUDE
-
 //-------------------------------------------------------- Include système
-
-//------------------------------------------------------ Include personnel
 using namespace std;
-#include "Trajet.h"
 #include <iostream>
 #include <cstring>
+//------------------------------------------------------ Include personnel
+#include "Trajet.h"
 
 //------------------------------------------------------------- Constantes
 
 //---------------------------------------------------- Variables de classe
-
 //----------------------------------------------------------- Types privés
-
-
 //----------------------------------------------------------------- PUBLIC
 //-------------------------------------------------------- Fonctions amies
 
@@ -57,18 +50,7 @@ char *Trajet::getDepart() const{
 }
 
 //------------------------------------------------- Surcharge d'opérateurs
-
 //-------------------------------------------- Constructeurs - destructeur
-/*Trajet::Trajet ( const Trajet & unTrajet )
-// Algorithme :
-//
-{
-#ifdef MAP
-    cout << "Appel au constructeur de copie de <Trajet>" << endl;
-#endif
-} //----- Fin de Trajet (constructeur de copie)
-*/
-
 Trajet::Trajet (char* unDepart, char* unArrivee)
 // Algorithme :
 //
@@ -91,12 +73,6 @@ Trajet::~Trajet ( )
 	delete []depart;
 	delete []arrivee;
 }
-
-
-
-
-
-
 //----- Fin de ~Trajet
 
 

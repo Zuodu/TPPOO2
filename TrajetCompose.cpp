@@ -14,7 +14,6 @@
 using namespace std;
 #include <iostream>
 #include <cstring>
-
 //------------------------------------------------------ Include personnel
 #include "TrajetCompose.h"
 //------------------------------------------------------------- Constantes
@@ -22,20 +21,12 @@ const int TCstart = 1000;
 //---------------------------------------------------- Variables de classe
 
 //----------------------------------------------------------- Types privés
-
-
 //----------------------------------------------------------------- PUBLIC
-//-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-// type TrajetCompose::Méthode ( liste de paramètres )
-// Algorithme :
-//
-//{
-//} //----- Fin de Méthode
 void TrajetCompose::afficherTrajet() const {
 	Parcours * current = listeEscales;
-	cout << "| TC"<<id-TCstart<<" = ";
+	cout << "| TC"<<id<<" = ";
 	while(current!=NULL)
 	{
 		//cout << "TrajetCompose afficher while" << endl;
@@ -50,20 +41,7 @@ int TrajetCompose::getID() const{
     return id;
 }
 
-
-//------------------------------------------------- Surcharge d'opérateurs
-
 //-------------------------------------------- Constructeurs - destructeur
-/*TrajetCompose::TrajetCompose ( const TrajetCompose & unTrajetCompose )
-// Algorithme :
-//
-{
-#ifdef MAP
-    cout << "Appel au constructeur de copie de <TrajetCompose>" << endl;
-#endif
-} //----- Fin de TrajetCompose (constructeur de copie)*/
-
-
 TrajetCompose::TrajetCompose (int unId,char* unDepart, char* unArrivee, Parcours* uneListeEscales)
         :Trajet(unDepart, unArrivee)
 // Algorithme :

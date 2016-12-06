@@ -16,19 +16,9 @@ using namespace std;
 //------------------------------------------------------ Include personnel
 #include "TrajetSimple.h"
 //------------------------------------------------------------- Constantes
-
 //----------------------------------------------------------- Types privés
-
-
 //----------------------------------------------------------------- PUBLIC
-//-------------------------------------------------------- Fonctions amies
-
 //----------------------------------------------------- Méthodes publiques
-// type TrajetSimple::Méthode ( liste de paramètres )
-// Algorithme :
-//
-//{
-//} //----- Fin de Méthode
 void TrajetSimple::afficherTrajet() const
 {
         if(id != 0) {
@@ -42,20 +32,7 @@ int TrajetSimple::getID() const {
     return id;
 }
 
-
-//------------------------------------------------- Surcharge d'opérateurs
-
 //-------------------------------------------- Constructeurs - destructeur
-/*TrajetSimple::TrajetSimple ( const TrajetSimple & unTrajetSimple )
-// Algorithme :
-//
-{
-#ifdef MAP
-    cout << "Appel au constructeur de copie de <TrajetSimple>" << endl;
-#endif
-} //----- Fin de TrajetSimple (constructeur de copie)
-*/
-
 TrajetSimple::TrajetSimple (int unId,char* unDepart, char* unArrivee, char* unTransport)
 :Trajet(unDepart, unArrivee)
 // Algorithme :
@@ -78,11 +55,7 @@ TrajetSimple::~TrajetSimple ( )
 #endif
 	delete []transport;
 }
-
-
 //----- Fin de ~TrajetSimple
-
-
 //------------------------------------------------------------------ PRIVE
 
 //----------------------------------------------------- Méthodes protégées

@@ -3,7 +3,6 @@
                              -------------------
     début                : 16/11/2016
     copyright            : (C) 2016 par Yohan GRACIA et Zifan YAO
-    e-mail               : $EMAIL$
 *************************************************************************/
 
 //---------- Interface de la classe <TrajetSimple> (fichier TrajetSimple.h) ----------------
@@ -17,10 +16,6 @@
 //------------------------------------------------------------------ Types
 
 //------------------------------------------------------------------------
-// Rôle de la classe <TrajetSimple>
-//
-//
-//------------------------------------------------------------------------
 
 class TrajetSimple : public Trajet
 {
@@ -28,23 +23,10 @@ class TrajetSimple : public Trajet
 
 public:
 //----------------------------------------------------- Méthodes publiques
-    // type Méthode ( liste de paramètres );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
 	void afficherTrajet() const;
     int getID() const;
 
-//------------------------------------------------- Surcharge d'opérateurs
-
 //-------------------------------------------- Constructeurs - destructeur
-    //TrajetSimple ( const TrajetSimple & unTrajetSimple );
-    // Mode d'emploi (constructeur de copie) :
-    //
-    // Contrat :
-    //
-
     TrajetSimple (int unId,char* unDepart, char* unArrivee, char* unTransport);
     // Mode d'emploi :
     //

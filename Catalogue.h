@@ -35,13 +35,17 @@ public:
     //
     // Contrat :
     //
+    void delete2D(char** table);
+    void delete2D(int** table);
+    void delete3D(int*** table);
     void AfficherCatalogue () const;
     void AddToCatalogue(Trajet *unTrajet);
 	void AddToCatalogueTSSaisie();
 	void AddToCatalogueTCSaisie();
 	bool AddToCatalogueTCFin(char* arriveeC, Parcours* premierParcours);
-    int** RechercheGraphe(int** matrixAdj,int*** matrixIdAdj,char** matrixNodeAdj);
-    void AfficherSolution(int ** solutions);
+    bool ligneVide(int index,int** matrixAdj,int nbMax);
+    int*** RechercheGraphe(char *depart,char *arrivee,int** matrixAdj,int*** matrixIdAdj,char** matrixNodeAdj, int*** solutions,int nbMax);
+    void AfficherSolution(int *** solutions);
 	void RechercheSimple();
     void RechercheAvancee();
     void MenuCatalogue ();

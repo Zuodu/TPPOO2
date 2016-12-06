@@ -31,6 +31,34 @@ const int maxMemeTrajet = 5;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
+
+void Catalogue::delete2D(char **table) {
+    int nbMax = idTC-TCstart+idTS;
+    for(int i=0;i<nbMax;i++){
+        delete[] table[i];
+    }
+    delete[] table;
+}
+
+void Catalogue::delete2D(int **table) {
+    int nbMax = idTC-TCstart+idTS;
+    for(int i=0;i<nbMax;i++){
+        delete[] table[i];
+    }
+    delete[] table;
+}
+
+void Catalogue::delete3D(int ***table) {
+    int nbMax = idTC-TCstart+idTS;
+    for(int i=0;i<nbMax;i++) {
+        for (int j = 0; j < nbMax; j++) {
+            delete[] table[i][j];
+        }
+        delete[] table[i];
+    }
+    delete[] table;
+}
+
 void Catalogue::AfficherCatalogue () const
 // Algorithme :
 //
@@ -161,12 +189,82 @@ bool Catalogue::AddToCatalogueTCFin(char* arriveeC, Parcours* premierParcours)
 	return trajetFini;
 }
 
-int** Catalogue::RechercheGraphe(int **matrixAdj,int ***matrixIdAdj,char **matrixNodeAdj) {
-
+bool Catalogue::ligneVide(int index,int** matrixAdj,int nbMax) {
+    for(int i =0;i<nbMax;i++){
+        if(matrixAdj[index][i]==1){
+            return false;
+        }
+    }
+    return true;
 }
 
-void Catalogue::AfficherSolution(int **solutions) {
+int*** Catalogue::RechercheGraphe(char *depart,char *arrivee,int **matrixAdj,int ***matrixIdAdj,char **matrixNodeAdj, int*** solutions,int nbMax) {
+    int indexParcouru[nbMax];
+    int departIndex = 0,arriveeIndex = 0;
+    int currentDepartIndex =0;
+    int lastDepartIndex = 0;
+    int i,j,k,l;
+    int ic = 0;
+    int c = 0,t = 0;
+    bool over = false;
+    //init des indexs : on les situe selon le depart et l'arrivee désirés
+    for(i=0;i<nbMax;i++){
+        if(strcmp(matrixNodeAdj[i],depart)==0){
+            arriveeIndex = i;
+        }
+        if(strcmp(matrixNodeAdj[i],arrivee)==0){
+            departIndex = i;
+            currentDepartIndex = i;
+            for(l=0;l<nbMax;l++){
+                indexParcouru[l] = i;
+            }
+            ic++;
+        }
+    }
 
+    //recherche des trajets par profondeur
+    while(!over){
+        for(j=0;matrixAdj[currentDepartIndex][j]!=1 && j<nbMax;j++){}//je me déplace dans la ligne et je m'arrete au premier 1 rencontré
+
+            if(j == arriveeIndex){//si le 1 se trouve dans la colonne de l'arrivee
+                    solutions[c][t] = matrixIdAdj[currentDepartIndex][j];//j'enregistre l'id du trajet dans ma matrice solution
+                    c++;// je change de ligne de solution (solution complète)
+                    t=0;//je remet le premier trajet à 0
+                matrixAdj[currentDepartIndex][j] = 0;//je considère que le trajet a disparu
+                //je reviens au début du while
+                }else{
+                if (!ligneVide(j, matrixAdj,nbMax)) {//si la ligne suivante n'est pas vide,
+                    solutions[c][t] = matrixIdAdj[currentDepartIndex][j];
+                    t++;//j'enregistre le trajet à la suite,
+                    matrixAdj[currentDepartIndex][j] = 0;
+                    lastDepartIndex = currentDepartIndex;
+                    currentDepartIndex = j;// je change de ligne et j'enregistre la derniere ligne
+                    indexParcouru[ic] = j;
+                    ic++;// je dit que j'ai utilisé cette ligne
+                } else {
+                    matrixAdj[currentDepartIndex][j] = 0;//si la ligne suivante est vide, je supprime ce trajet
+
+                }
+                //FIND DU DEUXIEME IF
+
+                }//FIN DU PREMIER IF
+        over = true;
+        for(i=0;i<nbMax;i++){
+            over = ligneVide(indexParcouru[i],matrixAdj,nbMax);
+        }
+        // a confirmer que c'est necessaire
+        if(j == nbMax-1 && currentDepartIndex == departIndex){over = true;}
+
+    }
+    return solutions;
+}
+
+void Catalogue::AfficherSolution(int *** solutions) {
+    int nbMax = idTC-TCstart+idTS;
+    cout<<"disp d'une solution de trajet"<<endl;
+    for(int i=0;i<nbMax;i++){
+        cout <<solutions[0][i][0]<<endl;
+    }
 }
 
 void Catalogue::RechercheSimple() 
@@ -202,19 +300,15 @@ void Catalogue::RechercheSimple()
 
 void Catalogue::RechercheAvancee()
 {
-    char currentDepart[LG];
-    char currentArrivee[LG];
+    char *rechercheDepart = new char[LG];
+    char *rechercheArrivee = new char[LG];
     int currentRow = 0;
     int currentDoublon = 0;
     int departIndex = 0;
     int arriveeIndex = 0;
     bool existeInMatRow = false;
-    bool existeInMatColumn = false;
-    int nbMax = idTC-1002+idTS;
-    int** solutions = new int*[nbMax];
-    for(int t=0;t<nbMax;t++){
-        solutions[t] = new int[nbMax];
-    }
+    int nbMax = idTC-TCstart+idTS;
+    int*** solutions = MatriceNomTrajetsInversee();
     int ** matrixInv = MatriceAdjacenceInversee();
     char** matrixTrjInv = MatriceTrajetsInversee();
     int *** matrixIdInv = MatriceNomTrajetsInversee();
@@ -268,25 +362,27 @@ void Catalogue::RechercheAvancee()
         existeInMatRow = false;
         // on va au prochain trajet
     }//FIN DU WHILE
-    //phase de test
-    cout<<"disp of matrixInv"<<endl;
-    cout<<"                 "<<endl;
-    cout<<"    ";
-    for(int z=0;z<(nbMax-1);z++){
-        cout<<matrixTrjInv[z]<<" ";
+    //cout<<matrixIdInv[3][2][0]<<"id"<<endl;
 
-    }
-    cout<<"|"<<endl;
-    for(int x = 0;x<(nbMax-1);x++){
-        cout <<matrixTrjInv[x]<<" | ";
-        for(int y=0;y<(nbMax-1);y++){
-            cout<<matrixInv[x][y]<<" ";
-        }
-        cout << "|"<<endl;
-    }//pause
+    //input de la recherche
+    cout<<"Choisissez la ville de depart"<<endl;
+    cin >>rechercheDepart;
+    cout<<"Choisissez la ville d'arrivee"<<endl;
+    cin >>rechercheArrivee;
 
-    solutions = RechercheGraphe(matrixInv,matrixIdInv,matrixTrjInv);
+    //calcul des solutions et affichage
+
+    solutions = RechercheGraphe(rechercheDepart,rechercheArrivee,matrixInv,matrixIdInv,matrixTrjInv,solutions,nbMax);
     AfficherSolution(solutions);
+
+    //delete
+    delete[] rechercheArrivee;
+    delete[] rechercheDepart;
+    //delete2D(matrixTrjInv);
+    //delete2D(matrixInv);
+    //delete3D(solutions);
+    //delete3D(matrixIdInv);
+
 }
 
 void Catalogue::MenuCatalogue ()
@@ -411,6 +507,9 @@ int ***Catalogue::MatriceNomTrajetsInversee() {
 
     return matrixAdj;
 }
+
+
+
 
 
 //------------------------------------------------------- Méthodes privées
