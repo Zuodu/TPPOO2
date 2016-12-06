@@ -41,14 +41,6 @@ bool Trajet::comparerDepart(char *unDepart) const{
     return strcmp(unDepart, depart) == 0;
 }
 
-char *Trajet::getArrivee() const{
-    return arrivee;
-}
-
-char *Trajet::getDepart() const{
-    return depart;
-}
-
 //------------------------------------------------- Surcharge d'opérateurs
 //-------------------------------------------- Constructeurs - destructeur
 Trajet::Trajet (char* unDepart, char* unArrivee)

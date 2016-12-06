@@ -23,22 +23,13 @@ class TrajetCompose : public Trajet
 public:
 //----------------------------------------------------- Méthodes publiques
 	void afficherTrajet() const;
-    int getID() const;
 
 //------------------------------------------------- Surcharge d'opérateurs
 
 //-------------------------------------------- Constructeurs - destructeur
     TrajetCompose (int unId,char* unDepart, char* unArrivee, Parcours* uneListeEscales );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
 
     virtual ~TrajetCompose ( );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
 
 //------------------------------------------------------------------ PRIVE
 
@@ -51,8 +42,6 @@ private:
 protected:
 //----------------------------------------------------- Attributs protégés
     Parcours* listeEscales;
-    int id;
-
 private:
 //------------------------------------------------------- Attributs privés
 

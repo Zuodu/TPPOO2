@@ -19,22 +19,13 @@
 //------------------------------------------------------------------ Types
 
 //------------------------------------------------------------------------
-// Rôle de la classe <Catalogue>
-//
-//
-//------------------------------------------------------------------------
-
 class Catalogue
 {
+    friend class Trajet;
 //----------------------------------------------------------------- PUBLIC
 
 public:
 //----------------------------------------------------- Méthodes publiques
-    // type Méthode ( liste de paramètres );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
     void delete2D(char** table);
     void delete2D(int** table);
     void delete3D(int*** table);
@@ -53,24 +44,9 @@ public:
 //------------------------------------------------- Surcharge d'opérateurs
 
 //-------------------------------------------- Constructeurs - destructeur
-    /*Catalogue ( const Catalogue & unCatalogue );
-    // Mode d'emploi (constructeur de copie) :
-    //
-    // Contrat :
-    //
-     */
-
     Catalogue (char* unNom);
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
 
     virtual ~Catalogue ( );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
 
 //------------------------------------------------------------------ PRIVE
 

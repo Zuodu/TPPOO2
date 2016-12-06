@@ -6,11 +6,11 @@
 *************************************************************************/
 
 //---------- Interface de la classe <Trajet> (fichier Trajet.h) ----------------
+
 #if ! defined ( TRAJET_H )
 #define TRAJET_H
 
 //--------------------------------------------------- Interfaces utilisées
-
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
@@ -18,34 +18,20 @@
 //------------------------------------------------------------------------
 class Trajet
 {
+    friend class Catalogue;
+//---------------------------------------------------------fonctions amies
 //----------------------------------------------------------------- PUBLIC
 public:
 //----------------------------------------------------- Méthodes publiques
-    // type Méthode ( liste de paramètres );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
 	virtual void afficherTrajet() const =0;
-    virtual int getID() const =0;
 	bool comparerTrajet(char* depart,char * arrivee) const;
     bool comparerArrivee(char* uneArrivee) const ;
     bool comparerDepart(char* unDepart) const ;
-    char* getArrivee() const;
-    char* getDepart() const;
 
 //-------------------------------------------- Constructeurs - destructeur
     Trajet (char* unDepart, char* unArrivee );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
 
     virtual ~Trajet ( );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
 
 //------------------------------------------------------------------ PRIVE
 
@@ -59,6 +45,7 @@ protected:
 //----------------------------------------------------- Attributs protégés
 	char* depart;
 	char* arrivee;
+	int id;
 private:
 //------------------------------------------------------- Attributs privés
 

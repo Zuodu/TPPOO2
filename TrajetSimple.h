@@ -24,7 +24,6 @@ class TrajetSimple : public Trajet
 public:
 //----------------------------------------------------- Méthodes publiques
 	void afficherTrajet() const;
-    int getID() const;
 
 //-------------------------------------------- Constructeurs - destructeur
     TrajetSimple (int unId,char* unDepart, char* unArrivee, char* unTransport);
@@ -50,8 +49,6 @@ private:
 protected:
 //----------------------------------------------------- Attributs protégés
     char* transport;
-    int id;
-    
 private:
 //------------------------------------------------------- Attributs privés
 

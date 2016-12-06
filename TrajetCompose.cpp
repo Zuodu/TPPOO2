@@ -37,9 +37,6 @@ void TrajetCompose::afficherTrajet() const {
     cout<<endl;
 }
 
-int TrajetCompose::getID() const{
-    return id;
-}
 
 //-------------------------------------------- Constructeurs - destructeur
 TrajetCompose::TrajetCompose (int unId,char* unDepart, char* unArrivee, Parcours* uneListeEscales)
@@ -56,13 +53,21 @@ TrajetCompose::TrajetCompose (int unId,char* unDepart, char* unArrivee, Parcours
 
 
 TrajetCompose::~TrajetCompose ( )
-// Algorithme :
-//
+
 {
 #ifdef MAP
     cout << "Appel au destructeur de <TrajetCompose>" << endl;
 #endif
-    delete []listeEscales;
+    Parcours* bufferedParcours = listeEscales;
+    Parcours* currentParcours = listeEscales;
+    while(currentParcours != NULL){
+        currentParcours = listeEscales->nextParcours;
+        delete bufferedParcours->trajetAssocie;
+        delete bufferedParcours;
+        bufferedParcours = currentParcours;
+    }
+    delete bufferedParcours;
+    delete currentParcours;
 } //----- Fin de ~TrajetCompose
 
 

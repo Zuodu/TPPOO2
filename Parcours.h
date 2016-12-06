@@ -17,10 +17,6 @@
 //------------------------------------------------------------------ Types
 
 //------------------------------------------------------------------------
-// Rôle de la classe <Parcours>
-//
-//
-//------------------------------------------------------------------------
 
 class Parcours
 {
@@ -28,34 +24,15 @@ class Parcours
 
 public:
 //----------------------------------------------------- Méthodes publiques
-    // type Méthode ( liste de paramètres );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
+
     Trajet *trajetAssocie;
     Parcours *nextParcours;
-//------------------------------------------------- Surcharge d'opérateurs
 
 //-------------------------------------------- Constructeurs - destructeur
-    /*Parcours ( const Parcours & unParcours );
-    // Mode d'emploi (constructeur de copie) :
-    //
-    // Contrat :
-    //
-    */
 
     Parcours (Trajet *unTrajet);
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
 
     virtual ~Parcours ( );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
 
 //------------------------------------------------------------------ PRIVE
 

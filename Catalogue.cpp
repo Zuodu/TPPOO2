@@ -143,7 +143,7 @@ void Catalogue::AddToCatalogueTCSaisie()
 	strcpy(arrivee, uneArrivee);
 	strcpy(arriveeC, uneArriveeC);
 	strcpy(transport, unTransport);
-	TrajetSimple *unTrajet = new TrajetSimple(0,depart, arrivee, transport);
+	TrajetSimple *unTrajet = new TrajetSimple(idTC,depart, arrivee, transport);
 	Parcours * premierParcours = new Parcours(unTrajet);
 	TrajetCompose * unTrajetCompose = new TrajetCompose(idTC,depart, arriveeC, premierParcours);
 	AddToCatalogue(unTrajetCompose);
@@ -173,7 +173,7 @@ bool Catalogue::AddToCatalogueTCFin(char* arriveeC, Parcours* premierParcours)
 	strcpy(depart, unDepart);
 	strcpy(arrivee, uneArrivee);
 	strcpy(transport, unTransport);
-	TrajetSimple *unTrajetSimple = new TrajetSimple(0,depart, arrivee, transport);
+	TrajetSimple *unTrajetSimple = new TrajetSimple(idTC,depart, arrivee, transport);
 	Parcours * unParcours = new Parcours(unTrajetSimple);
 
 	Parcours* currentParcours = premierParcours;
@@ -204,8 +204,8 @@ int*** Catalogue::RechercheGraphe(char *depart,char *arrivee,int **matrixAdj,int
     int currentDepartIndex =0;
     int lastDepartIndex = 0;
     int i,j,k,l;
-    int ic = 0;
-    int c = 0,t = 0;
+    int indexParcouruIndex = 0;
+    int currentSolutionIndex = 0,currentSolutionColumn = 0,lastT=0;
     bool over = false;
     //init des indexs : on les situe selon le depart et l'arrivee désirés
     for(i=0;i<nbMax;i++){
@@ -215,42 +215,68 @@ int*** Catalogue::RechercheGraphe(char *depart,char *arrivee,int **matrixAdj,int
         if(strcmp(matrixNodeAdj[i],arrivee)==0){
             departIndex = i;
             currentDepartIndex = i;
+            lastDepartIndex = currentDepartIndex;
             for(l=0;l<nbMax;l++){
                 indexParcouru[l] = i;
             }
-            ic++;
+            indexParcouruIndex++;
         }
     }
 
     //recherche des trajets par profondeur
     while(!over){
-        for(j=0;matrixAdj[currentDepartIndex][j]!=1 && j<nbMax;j++){}//je me déplace dans la ligne et je m'arrete au premier 1 rencontré
+        for(j=0;matrixAdj[currentDepartIndex][j]!=1 && j<nbMax;j++){}//recherche du premier 1 de la ligne
+        if(j==nbMax){j=nbMax-1;}
 
             if(j == arriveeIndex){//si le 1 se trouve dans la colonne de l'arrivee
-                    solutions[c][t] = matrixIdAdj[currentDepartIndex][j];//j'enregistre l'id du trajet dans ma matrice solution
-                    c++;// je change de ligne de solution (solution complète)
-                    t=0;//je remet le premier trajet à 0
-                matrixAdj[currentDepartIndex][j] = 0;//je considère que le trajet a disparu
+                    solutions[currentSolutionIndex][currentSolutionColumn] = matrixIdAdj[currentDepartIndex][j];
+                    currentSolutionIndex++;// je change de ligne de solution (solution complète)
+                    lastT = currentSolutionColumn;
+                    currentSolutionColumn=0;//je remet le premier trajet à 0
+                    matrixAdj[currentDepartIndex][j] = 0;//je considère que le trajet a disparu
                 //je reviens au début du while
                 }else{
                 if (!ligneVide(j, matrixAdj,nbMax)) {//si la ligne suivante n'est pas vide,
-                    solutions[c][t] = matrixIdAdj[currentDepartIndex][j];
-                    t++;//j'enregistre le trajet à la suite,
+                    solutions[currentSolutionIndex][currentSolutionColumn] = matrixIdAdj[currentDepartIndex][j];
+                    currentSolutionColumn++;//j'enregistre le trajet à la suite,
                     matrixAdj[currentDepartIndex][j] = 0;
                     lastDepartIndex = currentDepartIndex;
                     currentDepartIndex = j;// je change de ligne et j'enregistre la derniere ligne
-                    indexParcouru[ic] = j;
-                    ic++;// je dit que j'ai utilisé cette ligne
-                } else {
+                    indexParcouru[indexParcouruIndex] = j;
+                    indexParcouruIndex++;// je dit que j'ai utilisé cette ligne
+                } else {//SI LA LIGNE EST VIDE
+                    for(i=0;i<nbMax;i++) {
+                        for (k = 0; k < currentSolutionIndex; k++) {
+                            for (l = 0; l < nbMax; l++) {
+                                if (solutions[k][l] == matrixIdAdj[j][i]) {
+                                    if (k != (currentSolutionIndex - 1) && l != lastT) {
+                                        for (i = l;i<nbMax;i++){
+                                            solutions[currentSolutionIndex][currentSolutionColumn] = solutions[k][i];
+                                            currentSolutionColumn++;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                     matrixAdj[currentDepartIndex][j] = 0;//si la ligne suivante est vide, je supprime ce trajet
-
+                    if(currentSolutionColumn>0){
+                        solutions[currentSolutionIndex][currentSolutionColumn-1] = matrixIdAdj[0][0];
+                        currentSolutionColumn--;
+                    }else{
+                        solutions[currentSolutionIndex][currentSolutionColumn] = matrixIdAdj[0][0];
+                    }
                 }
                 //FIND DU DEUXIEME IF
-
                 }//FIN DU PREMIER IF
         over = true;
-        for(i=0;i<nbMax;i++){
-            over = ligneVide(indexParcouru[i],matrixAdj,nbMax);
+        for(i=0;i<nbMax && over;i++){
+            if(!ligneVide(indexParcouru[i],matrixAdj,nbMax)){
+                if(currentDepartIndex!=j) {
+                    currentDepartIndex = lastDepartIndex;
+                }
+                over = false;
+            }
         }
         // a confirmer que c'est necessaire
         if(j == nbMax-1 && currentDepartIndex == departIndex){over = true;}
@@ -260,10 +286,16 @@ int*** Catalogue::RechercheGraphe(char *depart,char *arrivee,int **matrixAdj,int
 }
 
 void Catalogue::AfficherSolution(int *** solutions) {
-    int nbMax = idTC-TCstart+idTS;
-    cout<<"disp d'une solution de trajet"<<endl;
-    for(int i=0;i<nbMax;i++){
-        cout <<solutions[0][i][0]<<endl;
+    int nbMax = idTC - TCstart + idTS;
+    cout << "Affichage des solutions disponibles" << endl;
+    for (int g = (nbMax-1); g >=0; g--) {
+        cout<<"parcours possible :  |";
+        for (int i = (nbMax-1); i >= 0; i--) {
+            if (solutions[g][i][0] != 0) {
+                cout << solutions[g][i][0]<<"|";
+            }
+        }
+        cout<<endl;
     }
 }
 
@@ -280,7 +312,7 @@ void Catalogue::RechercheSimple()
 	strcpy(departRecherche, unDepart);
 	strcpy(arriveeRecherche, uneArrivee);
 	Parcours* currentParcours = listeTrajets;
-	bool estEgal = false;
+	bool estEgal;
 	bool auMoinsUn = false;
 	while (currentParcours->nextParcours != NULL)
 	{
@@ -296,6 +328,8 @@ void Catalogue::RechercheSimple()
 	{
 		cout << "Aucun trajet du catalogue ne correspond a votre recherche" << endl;
 	}
+    delete[] departRecherche;
+    delete[] arriveeRecherche;
 }
 
 void Catalogue::RechercheAvancee()
@@ -324,7 +358,7 @@ void Catalogue::RechercheAvancee()
             }
         }
         if(!existeInMatRow){
-            matrixTrjInv[currentRow] = currentParcours->trajetAssocie->getArrivee();
+            matrixTrjInv[currentRow] = currentParcours->trajetAssocie->arrivee;
             currentRow++;
             existeInMatRow = false;
         }
@@ -338,10 +372,10 @@ void Catalogue::RechercheAvancee()
         }
 
         if(!existeInMatRow){
-            matrixTrjInv[currentRow] = currentParcours->trajetAssocie->getDepart();
+            matrixTrjInv[currentRow] = currentParcours->trajetAssocie->depart;
             existeInMatRow = false;
             matrixInv[currentRow-1][currentRow] = 1;
-            matrixIdInv[currentRow-1][currentRow][currentDoublon] = currentParcours->trajetAssocie->getID();
+            matrixIdInv[currentRow-1][currentRow][currentDoublon] = currentParcours->trajetAssocie->id;
             currentRow++;
         }
         if(existeInMatRow){  // si sa ligne existe deja
@@ -354,7 +388,7 @@ void Catalogue::RechercheAvancee()
             while(matrixIdInv[arriveeIndex][departIndex][currentDoublon]!=0) {
                 currentDoublon++;
             } //on cherche la derniere case vide des id deja parcourus qui correspondent au meme trajet en gros
-            matrixIdInv[arriveeIndex][departIndex][currentDoublon] = currentParcours->trajetAssocie->getID();
+            matrixIdInv[arriveeIndex][departIndex][currentDoublon] = currentParcours->trajetAssocie->id;
             // on insere l'id du trajet actuel
         }
         // on reinitialise les doublons
@@ -378,10 +412,10 @@ void Catalogue::RechercheAvancee()
     //delete
     delete[] rechercheArrivee;
     delete[] rechercheDepart;
-    //delete2D(matrixTrjInv);
-    //delete2D(matrixInv);
-    //delete3D(solutions);
-    //delete3D(matrixIdInv);
+    delete2D(matrixTrjInv);
+    delete2D(matrixInv);
+    delete3D(solutions);
+    delete3D(matrixIdInv);
 
 }
 
@@ -449,14 +483,21 @@ Catalogue::~Catalogue ( )
 {
 	//TODO  : besoin d'une boucle pour delete chaque pointeur qui suit faire dans le sens 1 vers 2 etc
 	// ex : current, on va sur le premier, on prend le suivant, on delete le premier
-	delete listeTrajets;
+    Parcours* bufferedParcours = listeTrajets;
+    Parcours* currentParcours = listeTrajets;
+    while(currentParcours != NULL){
+        currentParcours = listeTrajets->nextParcours;
+        delete bufferedParcours->trajetAssocie;
+        delete bufferedParcours;
+        bufferedParcours = currentParcours;
+    }
+    delete bufferedParcours;
+    delete currentParcours;
 	delete[] nomCatalogue;
 #ifdef MAP
     cout << "Appel au destructeur de <Catalogue>" << endl;
 #endif
 }
-
-
 //----- Fin de ~Catalogue
 
 
@@ -508,9 +549,4 @@ int ***Catalogue::MatriceNomTrajetsInversee() {
     return matrixAdj;
 }
 
-
-
-
-
 //------------------------------------------------------- Méthodes privées
-

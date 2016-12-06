@@ -16,20 +16,17 @@ using namespace std;
 //------------------------------------------------------ Include personnel
 #include "TrajetSimple.h"
 //------------------------------------------------------------- Constantes
+const int TCStart = 1000;
 //----------------------------------------------------------- Types privés
 //----------------------------------------------------------------- PUBLIC
 //----------------------------------------------------- Méthodes publiques
 void TrajetSimple::afficherTrajet() const
 {
-        if(id != 0) {
+        if(id < TCStart) {
             cout << "| TS" << id << " = " << "de  " << depart << " a " << arrivee << " en " << transport << endl;
         }else{
             cout <<"de  " << depart << " a " << arrivee << " en " << transport;
         }
-}
-
-int TrajetSimple::getID() const {
-    return id;
 }
 
 //-------------------------------------------- Constructeurs - destructeur
