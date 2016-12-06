@@ -15,7 +15,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/TPPOO2.exe" afterPath="$PROJECT_DIR$/cmake-build-debug/TPPOO2.exe" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Catalogue.cpp" afterPath="$PROJECT_DIR$/Catalogue.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Makefile" afterPath="$PROJECT_DIR$/Makefile" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
     </list>
     <ignored path="TPPOO2.iws" />
@@ -82,7 +81,7 @@
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
-              <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+              <caret line="9" column="10" lean-forward="false" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
               <folding>
                 <element signature="e#21#40#0" expanded="true" />
               </folding>
@@ -93,13 +92,13 @@
       <file leaf-file-name="Catalogue.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Catalogue.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-796">
-              <caret line="419" column="25" lean-forward="false" selection-start-line="419" selection-start-column="25" selection-end-line="419" selection-end-column="25" />
+            <state relative-caret-position="-17">
+              <caret line="39" column="10" lean-forward="false" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
               <folding>
                 <element signature="e#633#652#0" expanded="true" />
-                <element signature="e#1874#2561#0" expanded="false" />
-                <element signature="e#16095#16399#0" expanded="false" />
-                <element signature="e#17234#17642#0" expanded="false" />
+                <element signature="e#1868#2555#0" expanded="false" />
+                <element signature="e#16089#16393#0" expanded="false" />
+                <element signature="e#17228#17636#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -155,8 +154,8 @@
         <option value="$PROJECT_DIR$/Parcours.h" />
         <option value="$PROJECT_DIR$/TrajetCompose.cpp" />
         <option value="$PROJECT_DIR$/Trajet.h" />
-        <option value="$PROJECT_DIR$/Catalogue.cpp" />
         <option value="$PROJECT_DIR$/Makefile" />
+        <option value="$PROJECT_DIR$/Catalogue.cpp" />
         <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
@@ -456,7 +455,7 @@
       <workItem from="1480966572128" duration="13030000" />
       <workItem from="1480979634649" duration="2228000" />
       <workItem from="1481028036788" duration="516000" />
-      <workItem from="1481045978751" duration="17308000" />
+      <workItem from="1481045978751" duration="17828000" />
     </task>
     <task id="LOCAL-00001" summary="regroupement des changements de yuohan et zifan après la 2ème séance de tp">
       <created>1479931465505</created>
@@ -514,11 +513,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481061847035</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="commit pour valgrind + makefile 2">
+      <created>1481063952166</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1481063952166</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72275000" />
+    <option name="totallyTimeSpent" value="72795000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -596,7 +602,9 @@
     <MESSAGE value="commit avec les fichiers trajets prets" />
     <MESSAGE value="commit pour valgrind" />
     <MESSAGE value="commit pour valgrind + makefile" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit pour valgrind + makefile" />
+    <MESSAGE value="commit pour valgrind + makefile 2" />
+    <MESSAGE value="commit pour valgrind + makefile 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit pour valgrind + makefile 3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -638,9 +646,9 @@
           <caret line="43" column="24" lean-forward="false" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
           <folding>
             <element signature="e#633#652#0" expanded="true" />
-            <element signature="e#1874#2561#0" expanded="false" />
-            <element signature="e#16095#16399#0" expanded="false" />
-            <element signature="e#17234#17642#0" expanded="false" />
+            <element signature="e#1868#2555#0" expanded="false" />
+            <element signature="e#16089#16393#0" expanded="false" />
+            <element signature="e#17228#17636#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -718,9 +726,9 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#633#652#0" expanded="true" />
-            <element signature="e#1874#2561#0" expanded="false" />
-            <element signature="e#16095#16399#0" expanded="false" />
-            <element signature="e#17234#17642#0" expanded="false" />
+            <element signature="e#1868#2555#0" expanded="false" />
+            <element signature="e#16089#16393#0" expanded="false" />
+            <element signature="e#17228#17636#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -798,9 +806,9 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#633#652#0" expanded="true" />
-            <element signature="e#1874#2561#0" expanded="false" />
-            <element signature="e#16095#16399#0" expanded="false" />
-            <element signature="e#17234#17642#0" expanded="false" />
+            <element signature="e#1868#2555#0" expanded="false" />
+            <element signature="e#16089#16393#0" expanded="false" />
+            <element signature="e#17228#17636#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1015,19 +1023,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Catalogue.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-796">
-          <caret line="419" column="25" lean-forward="false" selection-start-line="419" selection-start-column="25" selection-end-line="419" selection-end-column="25" />
-          <folding>
-            <element signature="e#633#652#0" expanded="true" />
-            <element signature="e#1874#2561#0" expanded="false" />
-            <element signature="e#16095#16399#0" expanded="false" />
-            <element signature="e#17234#17642#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Makefile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
@@ -1036,10 +1031,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Catalogue.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-17">
+          <caret line="39" column="10" lean-forward="false" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
+          <folding>
+            <element signature="e#633#652#0" expanded="true" />
+            <element signature="e#1868#2555#0" expanded="false" />
+            <element signature="e#16089#16393#0" expanded="false" />
+            <element signature="e#17228#17636#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+          <caret line="9" column="10" lean-forward="false" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
           <folding>
             <element signature="e#21#40#0" expanded="true" />
           </folding>

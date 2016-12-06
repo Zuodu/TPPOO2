@@ -7,7 +7,7 @@ void initCatalogue()
     char* nomCatalogue = (char*) "catalogue1";
     Catalogue *myCatalogue = new Catalogue(nomCatalogue);
 	myCatalogue->MenuCatalogue();
-    delete[] myCatalogue;
+    delete myCatalogue;
 
 }
 

@@ -37,7 +37,7 @@ void Catalogue::delete2D(char **table) {
     for(int i=0;i<nbMax;i++){
         delete[] table[i];
     }
-    delete[] table;
+    delete table;
 }
 
 void Catalogue::delete2D(int **table) {
@@ -45,7 +45,7 @@ void Catalogue::delete2D(int **table) {
     for(int i=0;i<nbMax;i++){
         delete[] table[i];
     }
-    delete[] table;
+    delete table;
 }
 
 void Catalogue::delete3D(int ***table) {
@@ -56,7 +56,7 @@ void Catalogue::delete3D(int ***table) {
         }
         delete[] table[i];
     }
-    delete[] table;
+    delete table;
 }
 
 void Catalogue::AfficherCatalogue () const
