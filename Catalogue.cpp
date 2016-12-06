@@ -104,9 +104,9 @@ void Catalogue::AddToCatalogueTSSaisie()
 	cin >> uneArrivee;
 	cout << "Donnez le moyen de transport" << endl;
 	cin >> unTransport;
-	char * depart = new char[strlen(unDepart)]; //ajustement taille chaines de caractères
-	char * arrivee = new char[strlen(uneArrivee)];
-	char * transport = new char[strlen(unTransport)];
+	char * depart = new char[LG]; //ajustement taille chaines de caractères
+	char * arrivee = new char[LG];
+	char * transport = new char[LG];
 
     //copie des attributs
 	strcpy(depart, unDepart);
@@ -133,10 +133,10 @@ void Catalogue::AddToCatalogueTCSaisie()
 	cin >> uneArrivee;
 	cout << "Donnez le moyen de transport du premier trajet simple" << endl;
 	cin >> unTransport;
-	char * depart = new char[strlen(unDepartC)];   //ajustement taille chaines de caractères
-	char * arrivee = new char[strlen(uneArrivee)];
-	char * arriveeC = new char[strlen(uneArriveeC)];
-	char * transport = new char[strlen(unTransport)];
+	char * depart = new char[LG];   //ajustement taille chaines de caractères
+	char * arrivee = new char[LG];
+	char * arriveeC = new char[LG];
+	char * transport = new char[LG];
 
     //copie des attributs
 	strcpy(depart, unDepartC);
@@ -167,9 +167,9 @@ bool Catalogue::AddToCatalogueTCFin(char* arriveeC, Parcours* premierParcours)
 	cin >> uneArrivee;
 	cout << "Donnez le moyen de transport de votre trajet intermediaire" << endl;
 	cin >> unTransport;
-	char * depart = new char[strlen(unDepart)];   //ajustement taille chaines de caractères
-	char * arrivee = new char[strlen(uneArrivee)];
-	char * transport = new char[strlen(unTransport)];
+	char * depart = new char[LG];   //ajustement taille chaines de caractères
+	char * arrivee = new char[LG];
+	char * transport = new char[LG];
 	strcpy(depart, unDepart);
 	strcpy(arrivee, uneArrivee);
 	strcpy(transport, unTransport);
@@ -416,6 +416,8 @@ void Catalogue::RechercheAvancee()
     delete2D(matrixInv);
     delete3D(solutions);
     delete3D(matrixIdInv);
+    delete[] matrixTrjInv;
+    delete[] matrixIdInv;
 
 }
 
