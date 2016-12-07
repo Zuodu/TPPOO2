@@ -26,6 +26,9 @@ const int TCstart = 1000;
 //----------------------------------------------------- Méthodes publiques
 void TrajetCompose::afficherTrajet() const
 {
+#ifdef MAP
+	cout << "Appel a la methode <afficherTrajet>" << endl;
+#endif
 	Parcours * current = listeEscales;
 	cout << "| TC"<<(id-TCstart)<<" = ";
 	while(current!=NULL)

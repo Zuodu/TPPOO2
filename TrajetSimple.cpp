@@ -22,6 +22,9 @@ const int TCStart = 1000;
 //----------------------------------------------------- Méthodes publiques
 void TrajetSimple::afficherTrajet() const
 {
+#ifdef MAP
+	cout << "Appel a la methode <afficherTrajet>" << endl;
+#endif
         if(id < TCStart)
 		{
             cout << "| TS" << id << " = " << "de  " << depart << " a " << arrivee << " en " << transport << endl;

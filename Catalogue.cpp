@@ -34,6 +34,9 @@ const int maxMemeTrajet = 5;
 
 void Catalogue::delete2D(char **table)
 {
+#ifdef MAP
+	cout << "Appel a la methode <delete2D char**>" << endl;
+#endif
 	int nbMax = idTC-TCstart+idTS;
 	for(int i=0;i<nbMax;i++){
 		delete[] table[i];
@@ -43,6 +46,9 @@ void Catalogue::delete2D(char **table)
 
 void Catalogue::delete2D(int **table)
 {
+#ifdef MAP
+	cout << "Appel a la methode <delete2D int**>" << endl;
+#endif
 	int nbMax = idTC-TCstart+idTS;
 	for(int i=0;i<nbMax;i++){
 		delete[] table[i];
@@ -52,6 +58,9 @@ void Catalogue::delete2D(int **table)
 
 void Catalogue::delete3D(int ***table)
 {
+#ifdef MAP
+	cout << "Appel a la methode <delete3D>" << endl;
+#endif
 	int nbMax = idTC-TCstart+idTS;
 	for(int i=0;i<nbMax;i++) {
 		for (int j = 0; j < nbMax; j++)
@@ -64,9 +73,10 @@ void Catalogue::delete3D(int ***table)
 }
 
 void Catalogue::AfficherCatalogue () const
-// Algorithme :
-//
 {
+#ifdef MAP
+	cout << "Appel a la methode <AfficherCatalogue>" << endl;
+#endif
 	cout <<"--------------------------------------------"<<endl;
 	cout<<"Affichage du catalogue : "<< nomCatalogue << endl;
 	cout <<"--------------------------------------------"<<endl;
@@ -88,6 +98,9 @@ void Catalogue::AfficherCatalogue () const
 
 void Catalogue::AddToCatalogue (Trajet *unTrajet)
 {
+#ifdef MAP
+	cout << "Appel a la methode <AddToCatalogue>" << endl;
+#endif
 	Parcours* currentParcours = listeTrajets;
 	while(currentParcours->nextParcours != NULL)
 	{
@@ -98,6 +111,9 @@ void Catalogue::AddToCatalogue (Trajet *unTrajet)
 }
 void Catalogue::AddToCatalogueTSSaisie()
 {
+#ifdef MAP
+	cout << "Appel a la methode <AddToCatalogueTSSaisie>" << endl;
+#endif
 	char unDepart[LG];
 	char uneArrivee[LG];
 	char unTransport[LG];
@@ -124,6 +140,9 @@ void Catalogue::AddToCatalogueTSSaisie()
 
 void Catalogue::AddToCatalogueTCSaisie()
 {
+#ifdef MAP
+	cout << "Appel a la methode <AddToCatalogueTCSaisie>" << endl;
+#endif
 	char unDepartC[LG];
 	char uneArriveeC[LG];
 	char uneArrivee[LG];
@@ -167,6 +186,9 @@ void Catalogue::AddToCatalogueTCSaisie()
 
 bool Catalogue::AddToCatalogueTCFin(char* arriveeC, Parcours* premierParcours)
 {
+#ifdef MAP
+	cout << "Appel a la methode <AddToCatalogueTCFin>" << endl;
+#endif
 	char unDepart[LG];
 	char uneArrivee[LG];
 	char unTransport[LG];
@@ -204,6 +226,9 @@ bool Catalogue::AddToCatalogueTCFin(char* arriveeC, Parcours* premierParcours)
 
 bool Catalogue::ligneVide(int index,int** matrixAdj,int nbMax)
 {
+#ifdef MAP
+	cout << "Appel a la methode <ligneVide>" << endl;
+#endif
 	for(int i =0;i<nbMax;i++)
 	{
 		if(matrixAdj[index][i]==1)
@@ -216,6 +241,9 @@ bool Catalogue::ligneVide(int index,int** matrixAdj,int nbMax)
 
 int*** Catalogue::RechercheGraphe(char *depart,char *arrivee,int **matrixAdj,int ***matrixIdAdj,char **matrixNodeAdj, int*** solutions,int nbMax)
 {
+#ifdef MAP
+	cout << "Appel a la methode <RechercheGraphe>" << endl;
+#endif
 	int indexParcouru[nbMax];
 	int departIndex = 0,arriveeIndex = 0;
 	int currentDepartIndex =0;
@@ -243,15 +271,20 @@ int*** Catalogue::RechercheGraphe(char *depart,char *arrivee,int **matrixAdj,int
 			indexParcouruIndex++;
 		}
 	}
-
 	//recherche des trajets par profondeur
 	while(!over)
 	{
+#ifdef MAP
+		cout << "Tick while" << endl;
+#endif
 		for(j=0;matrixAdj[currentDepartIndex][j]!=1 && j<nbMax;j++){}//recherche du premier 1 de la ligne
 		if(j==nbMax){j=nbMax-1;}
 
 		if(j == arriveeIndex)
 		{//si le 1 se trouve dans la colonne de l'arrivee
+#ifdef MAP
+			cout << "Tick solution trouvee!" << endl;
+#endif
 			solutions[currentSolutionIndex][currentSolutionColumn] = matrixIdAdj[currentDepartIndex][j];
 			currentSolutionIndex++;// je change de ligne de solution (solution complète)
 			lastT = currentSolutionColumn;
@@ -262,6 +295,9 @@ int*** Catalogue::RechercheGraphe(char *depart,char *arrivee,int **matrixAdj,int
 		{
 			if (!ligneVide(j, matrixAdj,nbMax))
 			{//si la ligne suivante n'est pas vide,
+#ifdef MAP
+				cout << "Tick if de ligne pas vide" << endl;
+#endif
 				solutions[currentSolutionIndex][currentSolutionColumn] = matrixIdAdj[currentDepartIndex][j];
 				currentSolutionColumn++;//j'enregistre le trajet à la suite,
 				matrixAdj[currentDepartIndex][j] = 0;
@@ -271,6 +307,9 @@ int*** Catalogue::RechercheGraphe(char *depart,char *arrivee,int **matrixAdj,int
 				indexParcouruIndex++;// je dit que j'ai utilisé cette ligne
 			} else
 			{//SI LA LIGNE EST VIDE
+#ifdef MAP
+				cout << "Tick if de ligne vide" << endl;
+#endif
 				for(i=0;i<nbMax;i++)
 				{
 					for (k = 0; k < currentSolutionIndex; k++)
@@ -311,7 +350,7 @@ int*** Catalogue::RechercheGraphe(char *depart,char *arrivee,int **matrixAdj,int
 				over = false;
 			}
 		}
-		// a confirmer que c'est necessaire
+		// TODO : a confirmer que c'est necessaire
 		if(j == nbMax-1 && currentDepartIndex == departIndex){over = true;}
 
 	}
@@ -320,6 +359,9 @@ int*** Catalogue::RechercheGraphe(char *depart,char *arrivee,int **matrixAdj,int
 
 void Catalogue::AfficherSolution(int *** solutions)
 {
+#ifdef MAP
+	cout << "Appel a la methode <AfficherSolution>" << endl;
+#endif
 //TODO : faire une methode propre de parcours en largeur !!!
 	int nbMax = idTC - TCstart + idTS;
 	bool changerArete = true;
@@ -368,6 +410,9 @@ void Catalogue::AfficherSolution(int *** solutions)
 
 void Catalogue::RechercheSimple()
 {
+#ifdef MAP
+	cout << "Appel a la methode <RechercheSimple>" << endl;
+#endif
 	char unDepart[LG];
 	char uneArrivee[LG];
 	cout << "Donnez la ville de depart qui vous interesse:" << endl;
@@ -401,6 +446,9 @@ void Catalogue::RechercheSimple()
 
 void Catalogue::RechercheAvancee()
 {
+#ifdef MAP
+	cout << "Appel a la methode <RechercheAvancee>" << endl;
+#endif
 	char *rechercheDepart = new char[LG];
 	char *rechercheArrivee = new char[LG];
 	int currentRow = 0;
@@ -473,7 +521,6 @@ void Catalogue::RechercheAvancee()
 		existeInMatRow = false;
 		// on va au prochain trajet
 	}//FIN DU WHILE
-	//cout<<matrixIdInv[3][2][0]<<"id"<<endl;
 
 	//input de la recherche
 	cout<<"Choisissez la ville de depart"<<endl;
@@ -501,6 +548,9 @@ void Catalogue::RechercheAvancee()
 
 void Catalogue::MenuCatalogue ()
 {
+#ifdef MAP
+	cout << "Appel a la methode <MenuCatalogue>" << endl;
+#endif
 	bool sortie =false;
 	int choix =0;
 	while(!sortie)
@@ -544,14 +594,15 @@ void Catalogue::MenuCatalogue ()
 
 Catalogue::Catalogue (char * unNom)
 {
+#ifdef MAP
+	cout << "Appel au constructeur de <Catalogue>" << endl;
+#endif
 	TrajetSimple* trajetInit = new TrajetSimple(0,unNom,unNom,unNom);
 	listeTrajets = new Parcours(trajetInit);
 	nomCatalogue = unNom;
 	idTC = TCstart+1;
 	idTS = 1;
-#ifdef MAP
-	cout << "Appel au constructeur de <Catalogue>" << endl;
-#endif
+
 } //----- Fin de Catalogue
 
 

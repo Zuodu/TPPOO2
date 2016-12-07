@@ -25,6 +25,9 @@ void Trajet::afficherTrajet () const{}
 
 bool Trajet::comparerTrajet(char* unDepart, char * uneArrivee) const
 {
+#ifdef MAP
+	cout << "Appel a la methode <comparerTrajet>" << endl;
+#endif
     bool correspond = false;
     if (strcmp(unDepart, depart) == 0 && strcmp(uneArrivee, arrivee) == 0)
     {
@@ -35,11 +38,17 @@ bool Trajet::comparerTrajet(char* unDepart, char * uneArrivee) const
 
 bool Trajet::comparerArrivee(char *uneArrivee) const
 {
+#ifdef MAP
+	cout << "Appel a la methode <comparerArrivee>" << endl;
+#endif
     return strcmp(uneArrivee, arrivee) == 0;
 }
 
 bool Trajet::comparerDepart(char *unDepart) const
 {
+#ifdef MAP
+	cout << "Appel a la methode <comparerDepart>" << endl;
+#endif
     return strcmp(unDepart, depart) == 0;
 }
 

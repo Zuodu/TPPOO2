@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/Catalogue.cpp" line="430" />
+    <bookmark url="file://$PROJECT_DIR$/Catalogue.cpp" line="478" />
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" buildAllGenerated="true">
     <generated>
@@ -15,13 +15,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78b7468f-fe0a-49f4-bb73-c0f95504b920" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/15387563_10206347583643156_1278025269_o.jpg" afterPath="$PROJECT_DIR$/15387563_10206347583643156_1278025269_o.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/TPPOO2.exe" afterPath="$PROJECT_DIR$/cmake-build-debug/TPPOO2.exe" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Catalogue.cpp" afterPath="$PROJECT_DIR$/Catalogue.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Makefile" afterPath="$PROJECT_DIR$/Makefile" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trajet.cpp" afterPath="$PROJECT_DIR$/Trajet.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrajetCompose.cpp" afterPath="$PROJECT_DIR$/TrajetCompose.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrajetSimple.cpp" afterPath="$PROJECT_DIR$/TrajetSimple.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
     </list>
     <ignored path="TPPOO2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,18 +45,8 @@
       <file leaf-file-name="Makefile" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Makefile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Trajet.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Trajet.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="7" column="74" lean-forward="false" selection-start-line="7" selection-start-column="74" selection-end-line="7" selection-end-column="74" />
+            <state relative-caret-position="459">
+              <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -64,8 +55,8 @@
       <file leaf-file-name="TrajetCompose.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TrajetCompose.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="43" column="23" lean-forward="false" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
+            <state relative-caret-position="306">
+              <caret line="18" column="74" lean-forward="true" selection-start-line="18" selection-start-column="74" selection-end-line="18" selection-end-column="74" />
               <folding>
                 <element signature="e#592#611#0" expanded="true" />
               </folding>
@@ -76,8 +67,8 @@
       <file leaf-file-name="Catalogue.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Catalogue.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-549">
-              <caret line="20" column="74" lean-forward="false" selection-start-line="20" selection-start-column="74" selection-end-line="20" selection-end-column="74" />
+            <state relative-caret-position="187">
+              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding>
                 <element signature="e#607#632#0" expanded="true" />
               </folding>
@@ -88,20 +79,41 @@
       <file leaf-file-name="TrajetCompose.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TrajetCompose.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="136">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="80" selection-end-column="74" />
+              <folding>
+                <element signature="e#1246#1300#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Trajet.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Trajet.cpp">
+      <file leaf-file-name="Catalogue.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Catalogue.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-192">
-              <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+            <state relative-caret-position="136">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="679" selection-end-column="74" />
               <folding>
-                <element signature="e#609#628#0" expanded="true" />
+                <element signature="e#633#652#0" expanded="true" />
+                <element signature="e#1355#1410#0" expanded="true" />
+                <element signature="e#1573#1627#0" expanded="true" />
+                <element signature="e#1791#1839#0" expanded="true" />
+                <element signature="e#2075#2132#0" expanded="true" />
+                <element signature="e#2840#2894#0" expanded="true" />
+                <element signature="e#3208#3270#0" expanded="true" />
+                <element signature="e#4011#4073#0" expanded="true" />
+                <element signature="e#5509#5568#0" expanded="true" />
+                <element signature="e#6742#6791#0" expanded="true" />
+                <element signature="e#7063#7118#0" expanded="true" />
+                <element signature="e#7836#7865#0" expanded="true" />
+                <element signature="e#8091#8132#0" expanded="true" />
+                <element signature="e#8632#8676#0" expanded="true" />
+                <element signature="e#9172#9212#0" expanded="true" />
+                <element signature="e#10501#10557#0" expanded="true" />
+                <element signature="e#11809#11864#0" expanded="true" />
+                <element signature="e#12902#12958#0" expanded="true" />
+                <element signature="e#16047#16100#0" expanded="true" />
+                <element signature="e#17690#17744#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -110,36 +122,9 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding>
-                <element signature="e#21#40#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TrajetSimple.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TrajetSimple.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="13" lean-forward="false" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+            <state relative-caret-position="323">
+              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Catalogue.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Catalogue.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="619" column="12" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="629" selection-end-column="0" />
-              <folding>
-                <element signature="e#633#652#0" expanded="true" />
-                <element signature="e#1801#2476#0" expanded="false" />
-                <element signature="e#15812#16088#0" expanded="false" />
-                <element signature="e#16615#16975#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -147,8 +132,40 @@
       <file leaf-file-name="Parcours.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Parcours.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1049">
-              <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+            <state relative-caret-position="408">
+              <caret line="25" column="67" lean-forward="false" selection-start-line="25" selection-start-column="67" selection-end-line="25" selection-end-column="67" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TrajetSimple.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TrajetSimple.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="63" selection-end-column="74" />
+              <folding>
+                <element signature="e#1145#1199#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Parcours.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Parcours.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="57" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TrajetSimple.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TrajetSimple.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -201,12 +218,12 @@
         <option value="$PROJECT_DIR$/TrajetCompose.h" />
         <option value="$PROJECT_DIR$/Parcours.h" />
         <option value="$PROJECT_DIR$/Trajet.h" />
-        <option value="$PROJECT_DIR$/Catalogue.cpp" />
-        <option value="$PROJECT_DIR$/TrajetSimple.cpp" />
         <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/Makefile" />
         <option value="$PROJECT_DIR$/Trajet.cpp" />
         <option value="$PROJECT_DIR$/TrajetCompose.cpp" />
-        <option value="$PROJECT_DIR$/Makefile" />
+        <option value="$PROJECT_DIR$/TrajetSimple.cpp" />
+        <option value="$PROJECT_DIR$/Catalogue.cpp" />
       </list>
     </option>
   </component>
@@ -506,7 +523,8 @@
       <workItem from="1480979634649" duration="2228000" />
       <workItem from="1481028036788" duration="516000" />
       <workItem from="1481045978751" duration="23077000" />
-      <workItem from="1481069746777" duration="1732000" />
+      <workItem from="1481069746777" duration="1753000" />
+      <workItem from="1481095005198" duration="8841000" />
     </task>
     <task id="LOCAL-00001" summary="regroupement des changements de yuohan et zifan après la 2ème séance de tp">
       <created>1479931465505</created>
@@ -592,11 +610,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481070594072</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="commit pour valgrind + makefile 5">
+      <created>1481071491693</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1481071491693</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79776000" />
+    <option name="totallyTimeSpent" value="88638000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -613,7 +638,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2065332" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914925" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5084926" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5084926" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908705" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -621,7 +646,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20706007" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908705" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39808917" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39808917" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -687,13 +712,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Parcours.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
-          <caret line="66" column="12" lean-forward="false" selection-start-line="66" selection-start-column="12" selection-end-line="66" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Catalogue.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
@@ -710,9 +728,25 @@
           <caret line="43" column="24" lean-forward="false" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
           <folding>
             <element signature="e#633#652#0" expanded="true" />
-            <element signature="e#1801#2476#0" expanded="false" />
-            <element signature="e#15812#16088#0" expanded="false" />
-            <element signature="e#16615#16975#0" expanded="false" />
+            <element signature="e#1355#1410#0" expanded="true" />
+            <element signature="e#1573#1627#0" expanded="true" />
+            <element signature="e#1791#1839#0" expanded="true" />
+            <element signature="e#2075#2132#0" expanded="true" />
+            <element signature="e#2840#2894#0" expanded="true" />
+            <element signature="e#3208#3270#0" expanded="true" />
+            <element signature="e#4011#4073#0" expanded="true" />
+            <element signature="e#5509#5568#0" expanded="true" />
+            <element signature="e#6742#6791#0" expanded="true" />
+            <element signature="e#7063#7118#0" expanded="true" />
+            <element signature="e#7836#7865#0" expanded="true" />
+            <element signature="e#8091#8132#0" expanded="true" />
+            <element signature="e#8632#8676#0" expanded="true" />
+            <element signature="e#9172#9212#0" expanded="true" />
+            <element signature="e#10501#10557#0" expanded="true" />
+            <element signature="e#11809#11864#0" expanded="true" />
+            <element signature="e#12902#12958#0" expanded="true" />
+            <element signature="e#16047#16100#0" expanded="true" />
+            <element signature="e#17690#17744#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -722,7 +756,7 @@
         <state relative-caret-position="731">
           <caret line="43" column="13" lean-forward="false" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
           <folding>
-            <element signature="e#21#40#0" expanded="true" />
+            <element signature="e#21#40#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -792,9 +826,25 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#633#652#0" expanded="true" />
-            <element signature="e#1801#2476#0" expanded="false" />
-            <element signature="e#15812#16088#0" expanded="false" />
-            <element signature="e#16615#16975#0" expanded="false" />
+            <element signature="e#1355#1410#0" expanded="true" />
+            <element signature="e#1573#1627#0" expanded="true" />
+            <element signature="e#1791#1839#0" expanded="true" />
+            <element signature="e#2075#2132#0" expanded="true" />
+            <element signature="e#2840#2894#0" expanded="true" />
+            <element signature="e#3208#3270#0" expanded="true" />
+            <element signature="e#4011#4073#0" expanded="true" />
+            <element signature="e#5509#5568#0" expanded="true" />
+            <element signature="e#6742#6791#0" expanded="true" />
+            <element signature="e#7063#7118#0" expanded="true" />
+            <element signature="e#7836#7865#0" expanded="true" />
+            <element signature="e#8091#8132#0" expanded="true" />
+            <element signature="e#8632#8676#0" expanded="true" />
+            <element signature="e#9172#9212#0" expanded="true" />
+            <element signature="e#10501#10557#0" expanded="true" />
+            <element signature="e#11809#11864#0" expanded="true" />
+            <element signature="e#12902#12958#0" expanded="true" />
+            <element signature="e#16047#16100#0" expanded="true" />
+            <element signature="e#17690#17744#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -804,7 +854,7 @@
         <state relative-caret-position="731">
           <caret line="43" column="13" lean-forward="false" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
           <folding>
-            <element signature="e#21#40#0" expanded="true" />
+            <element signature="e#21#40#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -874,9 +924,25 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#633#652#0" expanded="true" />
-            <element signature="e#1801#2476#0" expanded="false" />
-            <element signature="e#15812#16088#0" expanded="false" />
-            <element signature="e#16615#16975#0" expanded="false" />
+            <element signature="e#1355#1410#0" expanded="true" />
+            <element signature="e#1573#1627#0" expanded="true" />
+            <element signature="e#1791#1839#0" expanded="true" />
+            <element signature="e#2075#2132#0" expanded="true" />
+            <element signature="e#2840#2894#0" expanded="true" />
+            <element signature="e#3208#3270#0" expanded="true" />
+            <element signature="e#4011#4073#0" expanded="true" />
+            <element signature="e#5509#5568#0" expanded="true" />
+            <element signature="e#6742#6791#0" expanded="true" />
+            <element signature="e#7063#7118#0" expanded="true" />
+            <element signature="e#7836#7865#0" expanded="true" />
+            <element signature="e#8091#8132#0" expanded="true" />
+            <element signature="e#8632#8676#0" expanded="true" />
+            <element signature="e#9172#9212#0" expanded="true" />
+            <element signature="e#10501#10557#0" expanded="true" />
+            <element signature="e#11809#11864#0" expanded="true" />
+            <element signature="e#12902#12958#0" expanded="true" />
+            <element signature="e#16047#16100#0" expanded="true" />
+            <element signature="e#17690#17744#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -886,7 +952,7 @@
         <state relative-caret-position="714">
           <caret line="42" column="13" lean-forward="false" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
           <folding>
-            <element signature="e#21#40#0" expanded="true" />
+            <element signature="e#21#40#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -983,22 +1049,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../TPPOO2-version yohan 2/Catalogue.h" />
-    <entry file="file://$PROJECT_DIR$/TrajetSimple.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="50" column="20" lean-forward="false" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Parcours.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/Makefile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1028,95 +1078,140 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Catalogue.cpp">
+    <entry file="file://$PROJECT_DIR$/input">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="619" column="12" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="629" selection-end-column="0" />
-          <folding>
-            <element signature="e#633#652#0" expanded="true" />
-            <element signature="e#1801#2476#0" expanded="false" />
-            <element signature="e#15812#16088#0" expanded="false" />
-            <element signature="e#16615#16975#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TrajetSimple.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="13" lean-forward="false" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+        <state relative-caret-position="374">
+          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
+    <entry file="file://$PROJECT_DIR$/Trajet.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="e#21#40#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="119">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Trajet.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-192">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        <state relative-caret-position="187">
+          <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
           <folding>
             <element signature="e#609#628#0" expanded="true" />
+            <element signature="e#1319#1373#0" expanded="true" />
+            <element signature="e#1617#1672#0" expanded="true" />
+            <element signature="e#1792#1846#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TrajetCompose.cpp">
+    <entry file="file://$PROJECT_DIR$/TrajetSimple.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state relative-caret-position="340">
+          <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Parcours.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1049">
-          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Catalogue.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-549">
-          <caret line="20" column="74" lean-forward="false" selection-start-line="20" selection-start-column="74" selection-end-line="20" selection-end-column="74" />
-          <folding>
-            <element signature="e#607#632#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TrajetCompose.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="43" column="23" lean-forward="false" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
+        <state relative-caret-position="306">
+          <caret line="18" column="74" lean-forward="true" selection-start-line="18" selection-start-column="74" selection-end-line="18" selection-end-column="74" />
           <folding>
             <element signature="e#592#611#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Trajet.h">
+    <entry file="file://$PROJECT_DIR$/TrajetCompose.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="7" column="74" lean-forward="false" selection-start-line="7" selection-start-column="74" selection-end-line="7" selection-end-column="74" />
+        <state relative-caret-position="136">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="80" selection-end-column="74" />
+          <folding>
+            <element signature="e#1246#1300#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parcours.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="57" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parcours.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="25" column="67" lean-forward="false" selection-start-line="25" selection-start-column="67" selection-end-line="25" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TrajetSimple.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="63" selection-end-column="74" />
+          <folding>
+            <element signature="e#1145#1199#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Catalogue.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="e#607#632#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Catalogue.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="679" selection-end-column="74" />
+          <folding>
+            <element signature="e#633#652#0" expanded="true" />
+            <element signature="e#1355#1410#0" expanded="true" />
+            <element signature="e#1573#1627#0" expanded="true" />
+            <element signature="e#1791#1839#0" expanded="true" />
+            <element signature="e#2075#2132#0" expanded="true" />
+            <element signature="e#2840#2894#0" expanded="true" />
+            <element signature="e#3208#3270#0" expanded="true" />
+            <element signature="e#4011#4073#0" expanded="true" />
+            <element signature="e#5509#5568#0" expanded="true" />
+            <element signature="e#6742#6791#0" expanded="true" />
+            <element signature="e#7063#7118#0" expanded="true" />
+            <element signature="e#7836#7865#0" expanded="true" />
+            <element signature="e#8091#8132#0" expanded="true" />
+            <element signature="e#8632#8676#0" expanded="true" />
+            <element signature="e#9172#9212#0" expanded="true" />
+            <element signature="e#10501#10557#0" expanded="true" />
+            <element signature="e#11809#11864#0" expanded="true" />
+            <element signature="e#12902#12958#0" expanded="true" />
+            <element signature="e#16047#16100#0" expanded="true" />
+            <element signature="e#17690#17744#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Makefile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+        <state relative-caret-position="459">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>

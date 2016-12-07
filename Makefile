@@ -3,6 +3,7 @@
 CC      = g++
 CFLAGS  = -Wall -c
 OFLAGS = -Wall -o
+DEFFLAGS = -DMAP
 
 
 all: TP2Voyage clean
@@ -14,19 +15,19 @@ main.o: main.cpp
 	$(CC) $(CFLAGS) main.cpp
 
 Trajet.o: Trajet.cpp Trajet.h
-	$(CC) $(CFLAGS) Trajet.cpp Trajet.h
+	$(CC) $(CFLAGS) $(DEFFLAGS) Trajet.cpp Trajet.h
 
 TrajetSimple.o: TrajetSimple.cpp TrajetSimple.h
-	$(CC) $(CFLAGS) TrajetSimple.cpp TrajetSimple.h
+	$(CC) $(CFLAGS) $(DEFFLAGS) TrajetSimple.cpp TrajetSimple.h
 
 TrajetCompose.o: TrajetCompose.cpp TrajetCompose.h
-	$(CC) $(CFLAGS) TrajetCompose.cpp TrajetCompose.h
+	$(CC) $(CFLAGS) $(DEFFLAGS) TrajetCompose.cpp TrajetCompose.h
 
 Parcours.o: Parcours.cpp Parcours.h
-	$(CC) $(CFLAGS) Parcours.cpp Parcours.h
+	$(CC) $(CFLAGS) $(DEFFLAGS) Parcours.cpp Parcours.h
 
 Catalogue.o: Catalogue.cpp Catalogue.h
-	$(CC) $(CFLAGS) Catalogue.cpp Catalogue.h
+	$(CC) $(CFLAGS) $(DEFFLAGS) Catalogue.cpp Catalogue.h
 
 .PHONY: clean cleanest
 
