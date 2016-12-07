@@ -26,7 +26,7 @@ const int TCstart = 1000;
 //----------------------------------------------------- Méthodes publiques
 void TrajetCompose::afficherTrajet() const {
 	Parcours * current = listeEscales;
-	cout << "| TC"<<id<<" = ";
+	cout << "| TC"<<(id-TCstart)<<" = ";
 	while(current!=NULL)
 	{
 		//cout << "TrajetCompose afficher while" << endl;
@@ -58,16 +58,14 @@ TrajetCompose::~TrajetCompose ( )
 #ifdef MAP
     cout << "Appel au destructeur de <TrajetCompose>" << endl;
 #endif
-    Parcours* bufferedParcours = listeEscales;
-    Parcours* currentParcours = listeEscales;
-    while(currentParcours != NULL){
-        currentParcours = listeEscales->nextParcours;
-        delete bufferedParcours->trajetAssocie;
-        delete bufferedParcours;
-        bufferedParcours = currentParcours;
-    }
-    delete bufferedParcours;
-    delete currentParcours;
+	Parcours* currentParcours = listeEscales;
+	while(currentParcours->nextParcours != NULL){
+		listeEscales = listeEscales->nextParcours;
+		delete currentParcours->trajetAssocie;
+		delete currentParcours;
+		currentParcours = listeEscales;
+	}
+	delete currentParcours;
 } //----- Fin de ~TrajetCompose
 
 

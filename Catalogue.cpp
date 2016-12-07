@@ -37,7 +37,7 @@ void Catalogue::delete2D(char **table) {
     for(int i=0;i<nbMax;i++){
         delete[] table[i];
     }
-    delete table;
+    delete[] table;
 }
 
 void Catalogue::delete2D(int **table) {
@@ -45,7 +45,7 @@ void Catalogue::delete2D(int **table) {
     for(int i=0;i<nbMax;i++){
         delete[] table[i];
     }
-    delete table;
+    delete[] table;
 }
 
 void Catalogue::delete3D(int ***table) {
@@ -56,7 +56,7 @@ void Catalogue::delete3D(int ***table) {
         }
         delete[] table[i];
     }
-    delete table;
+    delete[] table;
 }
 
 void Catalogue::AfficherCatalogue () const
@@ -133,7 +133,7 @@ void Catalogue::AddToCatalogueTCSaisie()
 	cin >> uneArrivee;
 	cout << "Donnez le moyen de transport du premier trajet simple" << endl;
 	cin >> unTransport;
-	char * depart = new char[LG];   //ajustement taille chaines de caractères
+	char * depart = new char[LG];
 	char * arrivee = new char[LG];
 	char * arriveeC = new char[LG];
 	char * transport = new char[LG];
@@ -287,16 +287,40 @@ int*** Catalogue::RechercheGraphe(char *depart,char *arrivee,int **matrixAdj,int
 
 void Catalogue::AfficherSolution(int *** solutions) {
     int nbMax = idTC - TCstart + idTS;
+	bool changerArete = true;
+	bool sautLigne = false;
     cout << "Affichage des solutions disponibles" << endl;
+	cout<<"--------------------------------------------------------------------------"<<endl;
     for (int g = (nbMax-1); g >=0; g--) {
-        cout<<"parcours possible :  |";
+		if(solutions[g][0][0]!=0) {
+			cout << "Suggestion de Voyage : " << endl;
+		}
         for (int i = (nbMax-1); i >= 0; i--) {
-            if (solutions[g][i][0] != 0) {
-                cout << solutions[g][i][0]<<"|";
-            }
-        }
-        cout<<endl;
-    }
+			if(solutions[g][i][0]!=0 && changerArete) {
+				sautLigne = true;
+				changerArete = false;
+				cout << "Prendre un de ces trajets : ";
+			}
+			for(int j=0;j<maxMemeTrajet;j++){
+
+				if(solutions[g][i][j] !=0){
+					if(solutions[g][i][j]<=TCstart) {
+						cout << " " << "TS" << solutions[g][i][j];
+					}else {
+						cout << " " << "TC" << solutions[g][i][j] - TCstart;
+					}
+				}
+			}//FIN MEME ARETE
+			if(sautLigne){
+				if(i>0){cout<<"     puis,";}else{cout<<"        puis vous etes arrive.";}
+				cout<<endl;
+				changerArete = true;
+			}
+			sautLigne = false;
+		}
+		//FIN MEME SOLUTION
+	}//FIN DES SOLUTIONS
+	cout<<"--------------------------------------------------------------------------"<<endl;
 }
 
 void Catalogue::RechercheSimple() 
@@ -358,7 +382,8 @@ void Catalogue::RechercheAvancee()
             }
         }
         if(!existeInMatRow){
-            matrixTrjInv[currentRow] = currentParcours->trajetAssocie->arrivee;
+            //matrixTrjInv[currentRow] = currentParcours->trajetAssocie->arrivee;
+			strcpy(matrixTrjInv[currentRow],currentParcours->trajetAssocie->arrivee);
             currentRow++;
             existeInMatRow = false;
         }
@@ -372,7 +397,8 @@ void Catalogue::RechercheAvancee()
         }
 
         if(!existeInMatRow){
-            matrixTrjInv[currentRow] = currentParcours->trajetAssocie->depart;
+            //matrixTrjInv[currentRow] = currentParcours->trajetAssocie->depart;
+			strcpy(matrixTrjInv[currentRow],currentParcours->trajetAssocie->depart);
             existeInMatRow = false;
             matrixInv[currentRow-1][currentRow] = 1;
             matrixIdInv[currentRow-1][currentRow][currentDoublon] = currentParcours->trajetAssocie->id;
@@ -416,8 +442,8 @@ void Catalogue::RechercheAvancee()
     delete2D(matrixInv);
     delete3D(solutions);
     delete3D(matrixIdInv);
-    delete[] matrixTrjInv;
-    delete[] matrixIdInv;
+    delete matrixTrjInv;
+    delete matrixIdInv;
 
 }
 
@@ -483,17 +509,13 @@ Catalogue::~Catalogue ( )
 // Algorithme :
 //
 {
-	//TODO  : besoin d'une boucle pour delete chaque pointeur qui suit faire dans le sens 1 vers 2 etc
-	// ex : current, on va sur le premier, on prend le suivant, on delete le premier
-    Parcours* bufferedParcours = listeTrajets;
     Parcours* currentParcours = listeTrajets;
-    while(currentParcours != NULL){
-        currentParcours = listeTrajets->nextParcours;
-        delete bufferedParcours->trajetAssocie;
-        delete bufferedParcours;
-        bufferedParcours = currentParcours;
+    while(currentParcours->nextParcours != NULL){
+		listeTrajets = listeTrajets->nextParcours;
+		delete currentParcours->trajetAssocie;
+        delete currentParcours;
+		currentParcours = listeTrajets;
     }
-    delete bufferedParcours;
     delete currentParcours;
 	delete[] nomCatalogue;
 #ifdef MAP
