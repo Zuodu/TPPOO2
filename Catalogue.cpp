@@ -153,6 +153,10 @@ void Catalogue::AddToCatalogueTCSaisie()
 		trajetFini=AddToCatalogueTCFin(arriveeC,premierParcours);
 	}
     idTC++;
+	delete[] depart;
+	delete[] arrivee;
+	delete[] arriveeC;
+	delete[] transport;
 }
 
 bool Catalogue::AddToCatalogueTCFin(char* arriveeC, Parcours* premierParcours)
@@ -186,6 +190,9 @@ bool Catalogue::AddToCatalogueTCFin(char* arriveeC, Parcours* premierParcours)
 	{
 		trajetFini = true;
 	}
+	delete[] depart;
+	delete[] arrivee;
+	delete[] transport;
 	return trajetFini;
 }
 
