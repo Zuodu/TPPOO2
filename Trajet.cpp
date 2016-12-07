@@ -33,11 +33,13 @@ bool Trajet::comparerTrajet(char* unDepart, char * uneArrivee) const
     return correspond;
 }
 
-bool Trajet::comparerArrivee(char *uneArrivee) const{
+bool Trajet::comparerArrivee(char *uneArrivee) const
+{
     return strcmp(uneArrivee, arrivee) == 0;
 }
 
-bool Trajet::comparerDepart(char *unDepart) const{
+bool Trajet::comparerDepart(char *unDepart) const
+{
     return strcmp(unDepart, depart) == 0;
 }
 

@@ -11,7 +11,8 @@ void initCatalogue()
 
 }
 
-int main() {
+int main()
+{
 
 	initCatalogue();
 

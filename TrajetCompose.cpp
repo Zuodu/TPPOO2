@@ -24,7 +24,8 @@ const int TCstart = 1000;
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
-void TrajetCompose::afficherTrajet() const {
+void TrajetCompose::afficherTrajet() const
+{
 	Parcours * current = listeEscales;
 	cout << "| TC"<<(id-TCstart)<<" = ";
 	while(current!=NULL)
@@ -59,7 +60,8 @@ TrajetCompose::~TrajetCompose ( )
     cout << "Appel au destructeur de <TrajetCompose>" << endl;
 #endif
 	Parcours* currentParcours = listeEscales;
-	while(currentParcours->nextParcours != NULL){
+	while(currentParcours->nextParcours != NULL)
+	{
 		listeEscales = listeEscales->nextParcours;
 		delete currentParcours->trajetAssocie;
 		delete currentParcours;

@@ -22,7 +22,8 @@ const int TCStart = 1000;
 //----------------------------------------------------- Méthodes publiques
 void TrajetSimple::afficherTrajet() const
 {
-        if(id < TCStart) {
+        if(id < TCStart)
+		{
             cout << "| TS" << id << " = " << "de  " << depart << " a " << arrivee << " en " << transport << endl;
         }else{
             cout <<"de  " << depart << " a " << arrivee << " en " << transport;
