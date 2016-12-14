@@ -178,9 +178,9 @@ void Catalogue::AddToCatalogueTCSaisie()
 	idTC++;
 	//delete
 	//TODO : valgrind trouve une erreur : un new a pas recu son delete mais je sais pas lequel
-	delete[] depart;
-	delete[] arrivee;
-	delete[] arriveeC;
+	//delete[] depart;
+	//delete[] arrivee;
+	//delete[] arriveeC;
 	delete[] transport;
 }
 
@@ -218,9 +218,9 @@ bool Catalogue::AddToCatalogueTCFin(char* arriveeC, Parcours* premierParcours)
 	{
 		trajetFini = true;
 	}
-	delete[] depart;
-	delete[] arrivee;
-	delete[] transport;
+	//delete[] depart;
+	//delete[] arrivee;
+	//delete[] transport;
 	return trajetFini;
 }
 
